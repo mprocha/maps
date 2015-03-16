@@ -1,0 +1,53 @@
+Descricao dos arquivos de /SisCom/GMT.maps
+
+Todos os arquivos LIMITES sao colunas de long. e lat. (1 pto. por
+linha) para usar no GMT. (A ORDEM E' LONGITUDE E LATITUDE !!) Interrupcao nas linhas e' definida com '>' (arquivo multiplo).
+Os arquivos podem ser usados com o comando
+   psxy -R -J -M   ...
+
+
+LIMITES GEOGRAFICOS:
+
+sam		America do Sul
+southam		America do sul e Brasil
+Brazil		limites do Brasil (parte de 'southam')
+BR_land_border	limite W do Brasil (parte de 'southam')
+estados		America do Sul (paises + estados do Brasil)
+		Obs.: limite GO/TO errado!
+brasil_ibge	mapa do Brasil (IBGE) com os estados (melhor
+		resolucao que o arquivo 'estados'
+brcosta_ibge	apenas a parte da costa de 'brasil_ibge'
+bat200m		linha de batimetria de 200m ao longo da plataf. cont.
+
+
+LIMITES GEOLOGICOS:
+
+geobra		cinturao(cratons) e 3 bacias (AM, PR, Parnaiba)
+
+margbas3	bacias marginais: Marajo', Potiguar, Tucano, BA
+		Rezende, Taubate, Sao Paulo, PR, SC e RS.
+
+Falhas do SE:
+ribeira78.rever, ribeira78.transc = falhas transcorrentes e reversas
+	da regiao SE, da Carta do Brasil ao Milionesimo, DNPM 1978
+	(MME) Folhas SF.23/24 Rio de Janeiro/Vitoria(1978) escala
+	1:1.000.000.   (Obs.: o mapa RADAMBRASIL 1983 tem mais
+	falhas e varias diferencas!)
+
+o-c_limit	limite de crosta extendida, margem SE (Chang et al.)
+
+placa	limites de placa: trincheira Peru-Chile, limite Caribe/SAM,
+		limite CAR/NAM, cadeia meso-atlantica norte.
+and3000	plateau andino, contorno de 3000m de altitude.
+
+
+TOPOGRAFIA:
+
+topo_americasul.grd	etopo5 (5'): 90W-30W, 60S-20N
+shelf.grd	etopo5 (5'), parte leste do Brasil: 63W-30W, 38S-5N
+SE30.grd	30" grid, parte SE do Brasil: 55W-40W, 27S-18S 
+NE30.grd	30" grid, Nordestel (Ceara' e RN): 43W-34W, 11S-02S
+goias30.grd	30" grid,, Goias: 54W-46W, 20S-12S
+
+ Se alguem quizer um grid de 30" de outra area pode cortar, com o 
+ comando 'grdcut', do arquivo geral: /tower3/GRIDS/Brasil30.grd

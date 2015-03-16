@@ -1,0 +1,42 @@
+>90 99.9999
+-52.783	  -22.954  zf_curitiba-maringa1
+-52.450	  -23.241  zf_curitiba-maringa1
+-51.962	  -23.561  zf_curitiba-maringa1
+-51.380	  -24.024  zf_curitiba-maringa1
+-50.912	  -24.388  zf_curitiba-maringa1
+-50.376	  -24.818  zf_curitiba-maringa1
+-49.992	  -25.072  zf_curitiba-maringa1
+>90 99.9999
+-50.837	  -23.797  zf_curitiba-maringa2
+-50.548	  -24.024  zf_curitiba-maringa2
+-50.228	  -24.314  zf_curitiba-maringa2
+-50.075	  -24.434  zf_curitiba-maringa2
+>90 99.9999
+-46.841	  -22.232  falha_jacutinga1
+-47.659	  -22.583  falha_jacutinga1
+-48.473	  -23.006  falha_jacutinga1
+-49.193	  -23.408  falha_jacutinga1
+-49.990	  -23.740  falha_jacutinga1
+-50.505	  -23.969  falha_jacutinga1
+>90 99.9999
+-51.143	  -24.264  falha_jacutinga2
+-51.784	  -24.516  falha_jacutinga2
+-52.388	  -24.702  falha_jacutinga2
+-52.959	  -24.891  falha_jacutinga2
+>90 99.9999
+-52.163	  -15.756  tb_lineament1
+-52.864	  -16.328  tb_lineament1
+-53.588	  -16.844  tb_lineament1
+-54.352	  -17.314  tb_lineament1
+-54.896	  -17.695  tb_lineament1
+>90 99.9999
+-52.328	  -16.393  tb_lineament2
+-52.541	  -16.558  tb_lineament2
+-52.772	  -16.831  tb_lineament2
+-53.168	  -17.068  tb_lineament2
+-53.726	  -17.363  tb_lineament2
+-53.713	  -17.363  tb_lineament2
+-54.136	  -17.670  tb_lineament2
+-54.451	  -18.019  tb_lineament2
+-54.819	  -18.367  tb_lineament2
+>90 99.9999

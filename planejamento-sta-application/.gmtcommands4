@@ -1,0 +1,16 @@
+# GMT common arguments shelf
+-Bwsen
+-JM3.
+-R-90/-29/-57./16
+-X2.5
+-x0.10
+-Y4.0
+-y-12.0
+-c
+-jM3.
+EOF
+OF
+
+
+
+EOF

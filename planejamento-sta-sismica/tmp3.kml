@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<name>GMT Data Document</name>
+	<Style id="GMT-4">
+		<IconStyle>
+			<scale>1</scale>
+			<color>ff80c0ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon57.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bf80c0ff</color>
+			<fill>1</fill>
+			<outline>1</outline>
+		</PolyStyle>
+		<LabelStyle>
+			<scale>1</scale>
+			<color>ffffffff</color>
+		</LabelStyle>
+	</Style>

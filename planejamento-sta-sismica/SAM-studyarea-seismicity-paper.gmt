@@ -1,0 +1,47 @@
+#!/bin/csh
+
+
+gmtset MEASURE_UNIT cm
+gmtset ANOT_FONT_SIZE 11
+gmtset LABEL_FONT_SIZE 11
+gmtset TICK_LENGTH 0.1
+gmtset FRAME_PEN  3
+gmtset BASEMAP_TYPE PLAIN
+gmtset WANT_EURO_FONT TRUE
+gmtset PLOT_DEGREE_FORMAT -D
+gmtset DOTS_PR_INCH 300
+
+\rm figure.ps studyarea.ps 
+
+psbasemap -R-90/-29/-57/16 -JM17.0 -Bwsen -P    -K > figure.ps
+
+#pscoast -R-60/-38/-30/-12 -W1 -JM17.0 -A10000/1 -Dl -Ba2SW -G255 -S116/195/250 -O -K -N1 >> figure.ps
+#pscoast -R-59/-37/-30/-06 -W1 -JM17.0 -A10000/1 -Dl -Ba2SWen -G255 -Sgray -O -K -N1 >> figure.ps
+pscoast -R-90/-29/-57./16 -W2 -JM17. -A10000/1 -Di -Bwsen -G255 -S235  -O -K -N1 >> figure.ps 
+
+#psxy <<END -L -A -W4 -JM -R -O -K >> figure.ps
+#-59 -30
+#-37 -30
+#-37 -06
+#-59 -06
+#END
+
+psxy <<END -L -A -W4 -JM -R -O -K >> figure.ps
+-67 -23
+-38 -23
+-38 -01
+-67 -01
+END
+
+psxy <<END -L -A -W4 -JM -R -O  >> figure.ps
+-90 -57
+-29 -57
+-29 16
+-90 16
+END
+
+ 
+mv figure.ps SAM-studyarea-seismicity-paper.ps
+
+gv SAM-studyarea-seismicity-paper.ps &
+

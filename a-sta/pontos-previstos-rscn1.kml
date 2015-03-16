@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Folder>
+	<name>Pontos-previstos-RSCN-BRASIS</name>
+	<open>1</open>
+	<LookAt>
+		<longitude>-59.78080408566576</longitude>
+		<latitude>-1.808941815910776</latitude>
+		<altitude>0</altitude>
+		<heading>-0.08283934939415005</heading>
+		<tilt>0</tilt>
+		<range>2809382.335094524</range>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+	</LookAt>
+	<Style>
+		<ListStyle>
+			<listItemType>check</listItemType>
+			<ItemIcon>
+				<state>open</state>
+				<href>:/mysavedplaces_open.png</href>
+			</ItemIcon>
+			<ItemIcon>
+				<state>closed</state>
+				<href>:/mysavedplaces_closed.png</href>
+			</ItemIcon>
+			<bgColor>00ffffff</bgColor>
+			<maxSnippetLines>2</maxSnippetLines>
+		</ListStyle>
+	</Style>
+	<Placemark id="21">
+		<name>Coari - AM</name>
+		<address>Coari - AM, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-63.141709,-4.084882,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amazonas</AdministrativeAreaName><Locality><LocalityName>Coari</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Tefé - AM</name>
+		<address>Tefé - AM, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-64.72358300000001,-3.320729,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amazonas</AdministrativeAreaName><Locality><LocalityName>Tefé</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>São Gabriel da Cachoeira - AM</name>
+		<address>São Gabriel da Cachoeira - AM, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-67.08350900000001,-0.133192,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amazonas</AdministrativeAreaName><Locality><LocalityName>São Gabriel da Cachoeira</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Macapá - AP</name>
+		<address>Macapá - AP, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-51.06656400000001,0.034457,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amapá</AdministrativeAreaName><Locality><LocalityName>Macapá</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Rio Branco - AC</name>
+		<address>Rio Branco - AC, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-67.807568,-9.973998999999999,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Acre</AdministrativeAreaName><Locality><LocalityName>Rio Branco</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Porto Velho - RO</name>
+		<address>Porto Velho - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-63.90196,-8.761825,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Porto Velho</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Ariquemes - RO</name>
+		<address>Ariquemes - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-63.043973,-9.913752000000001,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Ariquemes</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Ji Paraná - RO</name>
+		<address>Ji Paraná - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-61.941863,-10.880827,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Ji Paraná</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Vilhena - RO</name>
+		<address>Vilhena - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-60.13098599999999,-12.736488,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Vilhena</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Costa Marques - RO</name>
+		<address>Costa Marques - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-64.232004,-12.433868,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Costa Marques</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Guajará-mirim - RO</name>
+		<address>Guajará-mirim - RO, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-65.332216,-10.790926,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Rondônia</AdministrativeAreaName><Locality><LocalityName>Guajará-mirim</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Cruzeiro do Sul - AC</name>
+		<address>Cruzeiro do Sul - AC, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-72.650361,-7.664902,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Acre</AdministrativeAreaName><Locality><LocalityName>Cruzeiro do Sul</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Santarém - PA</name>
+		<address>Santarém - PA, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-54.698735,-2.439435,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Pará</AdministrativeAreaName><Locality><LocalityName>Santarém</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Belém - PA</name>
+		<address>Belém - PA, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-48.50236799999999,-1.45502,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Pará</AdministrativeAreaName><Locality><LocalityName>Belém</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Manaus - AM</name>
+		<address>Manaus - AM, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-60.02642999999999,-3.106409,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amazonas</AdministrativeAreaName><Locality><LocalityName>Manaus</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Benjamin Constant - AM</name>
+		<address>Benjamin Constant - AM, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-70.030175,-4.376012,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="4" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><Country><CountryNameCode>BR</CountryNameCode><AdministrativeArea><AdministrativeAreaName>Amazonas</AdministrativeAreaName><Locality><LocalityName>Benjamin Constant</LocalityName></Locality></AdministrativeArea></Country></AddressDetails>
+	</Placemark>
+	<Placemark id="21">
+		<name>Rio Juruena - MT</name>
+		<address>Rio Juruena, República Federativa do Brasil</address>
+		<styleUrl>#geocode</styleUrl>
+		<MultiGeometry>
+			<Point>
+				<coordinates>-58.18153600000001,-9.267175,0</coordinates>
+			</Point>
+		</MultiGeometry>
+		<AddressDetails Accuracy="0" xmlns="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0"><AddressLines><AddressLine>Rio Juruena</AddressLine></AddressLines></AddressDetails>
+	</Placemark>
+</Folder>
+</kml>

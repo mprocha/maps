@@ -1,0 +1,25 @@
+#!/bin/sh
+
+
+fig=SAm_topo.ps
+
+#gmtset PAPER_MEDIA letter+ ANOT_FONT_SIZE 15 ANOT_FONT 1
+gmtset PAPER_MEDIA A4 ANOT_FONT_SIZE 15 ANOT_FONT 1
+
+###
+# Map of S.America
+###
+
+grdraster 7 -I30c -R-90/-25/-65/20 -Gjunk.grd -V
+grdfilter junk.grd -D1 -I1m -Fg1 -N -V -GsouthAmerica.grd
+grdgradient southAmerica.grd -A315 -GsouthAmericagradient.grd -Nt -V
+
+grdimage southAmerica.grd -R-85/-30/-60/15 -JM4i -Ba10f5 -Ctabcor2.amarelo \
+      -IsouthAmericagradient.grd -V -K > $fig
+pscoast -JM -R -N1 -Dh -W1.0p -A2500 -V -O -K >> $fig
+
+psxy -R -JM -O -K -: -Sc0.075i -G255 -W1.0p all.latlon >> $fig
+psxy -R -JM -O -K -: -Ss0.075i -G255 -W1.0p ../BLSP/MAP/all.latlon >> $fig
+
+pstext -: -R -JM -O -K station.names >> $fig
+pstext -: -R -JM -O ../BLSP/MAP/station.names >> $fig

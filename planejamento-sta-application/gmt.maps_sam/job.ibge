@@ -1,0 +1,10 @@
+#    PLOTA MAPA DO IBGE
+# remove arquivos gerados anteriormente
+/bin/rm fig.ibge  
+psbasemap  -R-60/-47.0/-34.0/-22.0 -Jm0.5 -B2g1WSNE -X1. -Y1.0 -P -Ujob.ibge -K > fig.ibge 
+psxy -R -Jm costa.temp -O >> fig.ibge
+
+pageview fig.ibge &
+mv  costa.temp brcosta_ibge
+
+

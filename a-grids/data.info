@@ -1,0 +1,35 @@
+2015-02-22 Marcelo Peres Rocha
+
+Dados abaixo foram obtidos no site do International Gravimetric Bureau
+http://bgi.omp.obs-mip.fr/data-products/Grids-and-models
+Foram cortados para os limites que abrangem a America do Sul.
+
+WGM2012_Bouguer_SouthAmerica_ponc_2min.grd
+WGM2012_ETOPO1_SouthAmerica_ponc_2min.cpt
+WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd
+WGM2012_Freeair_SouthAmerica_ponc_2min.grd
+WGM2012_Isostatic_SouthAmerica_ponc_2min.grd
+
+
+Dado do campo magnetico da Terra cortado.
+EMAG2_SouthAmerica_V2.grd
+
+
+Dados Originais em ~/GRIDS-ORIGINAIS
+
+WGM2012_Bouguer_ponc_2min.grd
+WGM2012_ETOPO1_ponc_2min.grd
+WGM2012_Freeair_ponc_2min.grd
+WGM2012_Isostatic_ponc_2min.grd
+
+
+Paleta de cores 
+
+PALET_WGM_Bouguer_Global.cpt
+PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt
+PALET_WGM_ETOPO1_Global.cpt
+PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt
+PALET_WGM_Freeair_Global.cpt
+PALET_WGM_Isostatic_Global.cpt
+topo-SouthAmerica.cpt
+

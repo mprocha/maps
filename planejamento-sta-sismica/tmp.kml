@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<name>GMT Data Document</name>
+	<Style id="GMT-4">
+		<IconStyle>
+			<scale>1</scale>
+			<color>ff80c0ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon57.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bf80c0ff</color>
+			<fill>1</fill>
+			<outline>1</outline>
+		</PolyStyle>
+		<LabelStyle>
+			<scale>1</scale>
+			<color>ffffffff</color>
+		</LabelStyle>
+	</Style>
+	<Folder>
+		<name>tmp.dat</name>
+	<Folder>
+		<name>Point Set 0</name>
+		<Placemark>
+			<name>Point 0</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.93617,-8.429541,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 1</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.0103,-8.17667,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 2</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.6709,-5.49,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 3</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.754,-3.773,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 4</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.27079,-6.32163,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 5</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.39217,-4.581284,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 6</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-40.37166,-3.74514,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 7</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.74407,-6.78144,0
+</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+	</Folder>
+</Document>
+</kml>

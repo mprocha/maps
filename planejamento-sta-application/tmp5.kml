@@ -1,0 +1,1055 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<name>GMT Data Document</name>
+	<Style id="GMT-4">
+		<IconStyle>
+			<scale>1</scale>
+			<color>ff0000ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon57.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bf0000ff</color>
+			<fill>1</fill>
+			<outline>1</outline>
+		</PolyStyle>
+		<LabelStyle>
+			<scale>1</scale>
+			<color>ffffffff</color>
+		</LabelStyle>
+	</Style>
+	<Folder>
+		<name>Point Set 0</name>
+		<Placemark>
+			<name>Point 0</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.93617,-8.429541,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 1</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.0103,-8.17667,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 2</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.6709,-5.49,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 3</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.754,-3.773,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 4</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.27079,-6.32163,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 5</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.39217,-4.581284,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 6</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-40.37166,-3.74514,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 7</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.74407,-6.78144,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 8</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.5751,-9.0224,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 9</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-37.5998,-10.2505,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 10</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.2017,-8.9286,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 11</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.7024,-10.4134,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 12</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-37.0454,-9.0387,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 13</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-40.0411,-3.3107,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 14</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-37.112,-5.7502,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 15</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.3837,-8.3094,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 16</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-35.2888,-6.4196,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 17</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.291,-4.2242,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 18</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-39.5838,-5.5434,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 19</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.2753,-7.3663,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 20</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-36.2753,-7.3663,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 21</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-41.7166,-5.1796,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 22</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-39.1727,-12.5999,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 23</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-39.4341,-14.9308,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 24</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-40.1954,-10.8606,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 25</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-37.7896,-10.9935,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 26</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.7659,-7.3674,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 27</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-38.0601,-9.128,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 28</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.5,-11.7,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 29</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.2,-11.9,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 30</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.7,-12.2,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 31</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-50.1,-13,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 32</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.7,-13.3,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 33</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.6,-10.7,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 34</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.87,-11.4,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 35</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.35,-10.13,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 36</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.42,-10.58,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 37</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.73,-11.7,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 38</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.2,-10.6,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 39</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.36,-9.75,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 40</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.67,-9.97,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 41</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.34,-8.95,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 42</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.68,-12.72,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 43</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.30827,-10.63006,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 44</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.83249,-10.6375,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 45</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-50.2331,-19.7393,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 46</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-55.699,-20.476,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 47</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.1202,-21.352,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 48</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.1234,-21.3625,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 49</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.8078,-15.6646,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 50</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-42.8606,-21.29,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 51</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.0308,-20.0398,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 52</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-43.8005,-21.221,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 53</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.01478,-15.64176,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 54</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.1493,-19.9874,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 55</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-45.5854,-22.5353,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 56</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.7635,-20.9985,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 57</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.7326,-21.6802,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 58</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-41.8338,-22.3978,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 59</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-40.5222,-20.7288,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 60</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-42.5654,-22.3569,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 61</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-41.429,-21.784,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 62</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-50.3779,-22.9681,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 63</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.0149,-22.8125,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 64</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.7182,-20.2365,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 65</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-54.16877,-19.57922,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 66</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.6892,-17.7433,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 67</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-57.33087,-26.33064,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 68</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.627,-13.5084,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 69</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.58189,-13.43213,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 70</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.37666,-13.81419,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 71</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.2242,-13.75714,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 72</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.0099,-23.6903,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 73</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-45.6418,-20.4878,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 74</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.2779,-20.6782,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 75</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.0855,-15.2644,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 76</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.8139,-21.7772,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 77</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.1165,-23.2525,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 78</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.71,-20,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 79</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.3410329,-27.3080083,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 80</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.1837386,-27.3501599,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 81</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.0040271,-27.3603637,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 82</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.1312221,-27.2345638,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 83</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.3411,-27.3082,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 84</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-39.6282,-15.9887,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 85</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.4929,-17.8929,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 86</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-43.3258,-21.7278,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 87</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.5051,-15.4678,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 88</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.7163,-24.093,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 89</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-55.8168,-14.8872,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 90</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-55.6815,-15.0672,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 91</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.8567992,-27.4946498,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 92</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.6124621,-27.4357632,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 93</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.4388283,-27.5724037,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 94</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.6651274,-27.5388859,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 95</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.026,-18.9277,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 96</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.9168,-19.0684,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 97</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-42.004,-21.055,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 98</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-54.1842,-21.4336,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 99</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.5927,-19.3755,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 100</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.55826,-28.61048,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 101</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.6859,-20.6628,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 102</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.9306,-20.8793,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 103</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.2618,-21.6074,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 104</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-45.6244,-23.3417,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 105</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-50.8634,-15.1369,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 106</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.70754,-22.6448,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 107</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-39.1238,-12.5306,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 108</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.43797,-18.53729,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 109</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-52.8367,-22.4564,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 110</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.0787,-13.3304,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 111</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-54.87967,-17.60028,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 112</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.3133,-22.0327,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 113</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.81883,-17.27021,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 114</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-57.4756,-21.4628,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 115</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.53,-22.4191,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 116</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.5019,-20.0737,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 117</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.0339,-24.651,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 118</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-50.3455,-16.5705,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 119</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.432,-23.592,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 120</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-44.929,-18.0922,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 121</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-51.3258,-20.6725,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 122</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-43.1955,-22.1541,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 123</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.7917,-16.2321,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 124</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.9658,-23.0022,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 125</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.9658,-23.0022,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 126</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.4032,-23.29653,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 127</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.44093,-22.65255,0
+</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

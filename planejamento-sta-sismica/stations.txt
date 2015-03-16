@@ -1,0 +1,10 @@
+-47.53 -10.75 Ponte Alta do Tocantins
+-46.87 -11.40 Rio da Conceição
+-46.35 -10.13 São Felix do Tocantins
+-46.42 -10.58 Mateiros
+-48.33 -10.17 Palmas
+-47.73 -11.70 Natividade (Sul)
+-49.20 -10.60 Cristalandia (Oeste PN)
+-47.58 -10.37 Lagoa do Tocantins
+-47.97 -9.95  Aparecida do Rio Negro
+

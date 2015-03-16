@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+	<name>GMT Data Document</name>
+	<Style id="GMT-4">
+		<IconStyle>
+			<scale>1</scale>
+			<color>ff80c0ff</color>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon57.png</href>
+			</Icon>
+		</IconStyle>
+		<LineStyle>
+			<color>ff000000</color>
+			<width>1</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>bf80c0ff</color>
+			<fill>1</fill>
+			<outline>1</outline>
+		</PolyStyle>
+		<LabelStyle>
+			<scale>1</scale>
+			<color>ffffffff</color>
+		</LabelStyle>
+	</Style>
+	<Folder>
+		<name>Point Set 0</name>
+		<Placemark>
+			<name>Point 0</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.53,-10.75,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 1</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.87,-11.4,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 2</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.35,-10.13,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 3</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-46.42,-10.58,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 4</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-48.33,-10.17,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 5</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.73,-11.7,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 6</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-49.2,-10.6,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 7</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.58,-10.37,0
+</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Point 8</name>
+			<styleUrl>#GMT-4</styleUrl>
+			<Point>
+					<coordinates>-47.97,-9.95,0
+</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>
