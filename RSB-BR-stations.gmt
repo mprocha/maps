@@ -7,17 +7,17 @@ gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION
 gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20       #GPS RBMC 
 projplan=n   ; colorprojplan=purple   ; stasymbprojplan=t   ; symbsizeprojplan=0.45   #Est. Planejadas (Projetos)
 sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
-brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
-broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
-brsoinf=y    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.40    #RSB-BR So-infra
+brsat=n      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
+broff=n      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
+brsoinf=n    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.40    #RSB-BR So-infra
 brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
 brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
 osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
 osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
 brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
-blusp=y      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.40      #RSB-BL USP 
-nbufrn=y     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.40     #RSB-NB UFRN 
-onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.40       #RSB-ON 
+blusp=n      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.40      #RSB-BL USP 
+nbufrn=n     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.40     #RSB-NB UFRN 
+onon=n       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.40       #RSB-ON 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
@@ -34,6 +34,7 @@ RiftsAbortadosBR=n                   ; elipse=n
 CratonsBR=y                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
+KimberlitosBR=y
 
 Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
 BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
@@ -47,14 +48,21 @@ gmtdir=~/maps
 filename=RSB-BR-stations
 
 ## Coordinates Limits definition:
-Wlon=-74.0  # -84 to include Peru sta and -74 for only Brazilian sta
-Elon=-30.0
-Slat=-36.0
-Nlat=07.0
+#Wlon=-74.0  # -84 to include Peru sta and -74 for only Brazilian sta
+#Elon=-30.0
+#Slat=-36.0
+#Nlat=07.0
+
+## Tomography Limits:
+Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-9.0
+
 ## Brazil limits: 
-# Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
+#Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
+
 ## South America limits: 
 # Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
+
+
 
 ## Cordinates Limits definition (Zoom):
 Wzlon=-64.0
@@ -153,7 +161,7 @@ pscoast -Q -O -K >> figure.ps
 ## Plot TomoP167:
 elif [ "$TomoP167" == y ]; then
 echo "Plotting Tomo P 167 km"
-makecpt -I -T-.55/.55/0.01 > ~/maps/167tmp.cpt
+makecpt -I -T-.55/.56/0.01 > ~/maps/a-grids/167tmp.cpt
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
 grdimage ~/maps/a-grids/167cut.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/167tmp.cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
@@ -283,6 +291,11 @@ fi
 if [ "$Events" == y ]; then
 cat ~/maps/a-events/evlist.txt | awk '{print $10,$9}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
 fi
+
+## Plot Brazilian Kimberlites Bodies:
+if [ "$KimberlitosBR" == y ]; then
+  cat ~/maps/a-base/CorposKimberliticos.txt | awk '{print $5,$6}' | psxy -JM -R -Sd0.20 -W2 -O -Ggray -K  >> figure.ps
+fi 
 
 # Plot Circle or Elipse - For circle elipseXsize == elipseYsize 
 if [ "$elipse" == y ]; then
