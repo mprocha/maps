@@ -1,74 +1,73 @@
-#!/bin/bash
+#!/bin/csh
 gmtset MEASURE_UNIT cm  ; gmtset ANOT_FONT_SIZE 11   ; gmtset LABEL_FONT_SIZE 11   ; gmtset TICK_LENGTH 0.1 
 gmtset FRAME_PEN  3     ; gmtset BASEMAP_TYPE PLAIN  ; gmtset WANT_EURO_FONT TRUE  ; gmtset PLOT_DEGREE_FORMAT -D 
 gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION 0
 
 # ($1) Choose 'y' or 'n' to plot a particular network; ($2) for color of the sta symbols; ($3) for sta symbol; (4) for sta symbol size:
-gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20       #GPS RBMC 
-projplan=n   ; colorprojplan=purple   ; stasymbprojplan=t   ; symbsizeprojplan=0.45   #Est. Planejadas (Projetos)
-sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
-brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
-broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
-brsoinf=y    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.40    #RSB-BR So-infra
-brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
-brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
-osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
-osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
-brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
-blusp=y      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.40      #RSB-BL USP 
-nbufrn=y     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.40     #RSB-NB UFRN 
-onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.40       #RSB-ON 
-bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
-nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
-planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
-perun=n      ; colorperun=black       ; stasymbperun=t      ; symbsizeperun=0.30      #Est. IGP Peru Norte
-peru=n       ; colorperu=blue         ; stasymbperu=t       ; symbsizeperu=0.30       #Est. IGP Peru    
-ufba=n       ; colorufba=blue         ; stasymbufba=t       ; symbsizeufba=0.30       #Est. UFBA Vilar  
-globnet=n    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.30    #Est. Rede Mundial
+set gnss       = n ; set colorgnss       = blue   ; set stasymbgnss       = d ; set symbsizegnss       = 0.20 #GPS RBMC 
+set projplan   = n ; set colorprojplan   = purple ; set stasymbprojplan   = t ; set symbsizeprojplan   = 0.45 #Est. Planejadas (Projetos)
+set sisunb     = n ; set colorsisunb     = gray   ; set stasymbsisunb     = t ; set symbsizesisunb     = 0.30 #Est. Obsis
+set brsat      = y ; set colorbrsat      = green  ; set stasymbbrsat      = t ; set symbsizebrsat      = 0.40 #RSB-BR Satelite
+set broff      = n ; set colorbroff      = orange ; set stasymbbroff      = t ; set symbsizebroff      = 0.40 #RSB-BR Off-line
+set brsoinf    = n ; set colorbrsoinf    = brown  ; set stasymbbrsoinf    = t ; set symbsizebrsoinf    = 0.40 #RSB-BR So-infra
+set brplan     = n ; set colorbrplan     = white  ; set stasymbbrplan     = t ; set symbsizebrplan     = 0.40 #RSB-BR Planejadas 
+set brtbr      = n ; set colorbrtbr      = brown  ; set stasymbbrtbr      = t ; set symbsizebrtbr      = 0.30 #Proj. Transbrasiliano 
+set osgeorge   = n ; set colorosgeorge   = pink   ; set stasymbosgeorge   = t ; set symbsizeosgeorge   = 0.30 #Proj. Transbrasiliano George
+set osinct     = n ; set colorosinct     = pink   ; set stasymbosinct     = t ; set symbsizeosinct     = 0.30 #Proj. INCT OS
+set brlablitos = n ; set colorbrlablitos = yellow ; set stasymbbrlablitos = t ; set symbsizebrlablitos = 0.30 #Lablitos 
+set blusp      = n ; set colorblusp      = blue   ; set stasymbblusp      = t ; set symbsizeblusp      = 0.40 #RSB-BL USP 
+set nbufrn     = n ; set colornbufrn     = red    ; set stasymbnbufrn     = t ; set symbsizenbufrn     = 0.40 #RSB-NB UFRN 
+set onon       = n ; set coloronon       = yellow ; set stasymbonon       = t ; set symbsizeonon       = 0.40 #RSB-ON 
+set bluspold   = n ; set colorbluspold   = black  ; set stasymbbluspold   = t ; set symbsizebluspold   = 0.30 #BL-IAG-USP 
+set nbmilen    = n ; set colornbmilen    = black  ; set stasymbnbmilen    = t ; set symbsizenbmilen    = 0.30 #Projeto Milenio
+set planusp    = n ; set colorplanusp    = white  ; set stasymbplanusp    = t ; set symbsizeplanusp    = 0.30 #Est. Planejadas (USP)
+set perun      = n ; set colorperun      = black  ; set stasymbperun      = t ; set symbsizeperun      = 0.30 #Est. IGP Peru Norte
+set peru       = n ; set colorperu       = blue   ; set stasymbperu       = t ; set symbsizeperu       = 0.30 #Est. IGP Peru    
+set ufba       = n ; set colorufba       = blue   ; set stasymbufba       = t ; set symbsizeufba       = 0.30 #Est. UFBA Vilar  
+set globnet    = n ; set colorglobnet    = black  ; set stasymbglobnet    = s ; set symbsizeglobnet    = 0.30 #Est. Rede Mundial
 
-BaciasIntracratonicasPrincipaisBR=y  ; Legend=y    
-BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
-BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=n    
-RiftsAbortadosBR=n                   ; elipse=n    
-CratonsBR=y                          ; zoombox=n    
-LineamentosBR=n                      ; text=y    
-SouthAmericaPlate=n                  ; inlet=n    
+set BaciasIntracratonicasPrincipaisBR	= y ;  set Legend	    = y    
+set BaciasIntracratonicasSecundariasBR	= n ;  set SAmBrazilContour = n     
+set BaciasMargemEquatorialBR		= n ;  set EstadosBR	    = y    
+set BaciasMargemLesteBR			= n ;  set Events	    = n    
+set RiftsAbortadosBR			= n ;  set elipse	    = n    
+set CratonsBR				= y ;  set zoombox	    = n    
+set LineamentosBR			= n ;  set text		    = y    
+set SouthAmericaPlate			= n ;  set inlet	    = n    
 
-Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
-BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
-FreeairAnomaly=n   ; FreeairGlobalColors=y   ; FreeairScale=n   #Need FreeAirAnomaly = y
-IsostaticAnomaly=n ; IsostaticGlobalColors=y ; IsostaticScale=n #Need IsostaticAnomaly = y
-EMAG2Anomaly=n     ; EMAG2Scale=n            #Need EMAG2Anomaly =y
-TomoP167=y         ; TomoP167Scale=n         #Need TomoP167 =y
+set Etopo1	     = y ; set Etopo1GlobalColors    = n ; set Etopo1Scale    = y #Need Etopo1 = y
+set BouguerAnomaly   = n ; set BouguerGlobalColors   = y ; set BouguerScale   = n #Need BouguerAnomaly = y
+set FreeairAnomaly   = n ; set FreeairGlobalColors   = y ; set FreeairScale   = n #Need FreeAirAnomaly = y
+set IsostaticAnomaly = n ; set IsostaticGlobalColors = y ; set IsostaticScale = n #Need IsostaticAnomaly = y
+set EMAG2Anomaly     = n ; set EMAG2Scale            = y #Need EMAG2Anomaly =y
 
 \rm figure.ps 
-gmtdir=~/maps
-filename=RSB-BR-stations
+set gmtdir = ~/maps
+set filename = RSB-BR-stations
 
 ## Coordinates Limits definition:
-Wlon=-74.0  # -84 to include Peru sta and -74 for only Brazilian sta
-Elon=-30.0
-Slat=-36.0
-Nlat=07.0
+set Wlon = -74.0  # -84 to include Peru sta and -74 for only Brazilian sta
+set Elon = -30.0
+set Slat = -36.0
+set Nlat =  07.0
 ## Brazil limits: 
-# Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
+# set Wlon=-74.0; set Elon=-30.0; set Slat=-36.0; set Nlat=07.0
 ## South America limits: 
-# Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
+# set Wlon=-85.0; set Elon=-30.0; set Slat=-60.0; set Nlat=15.0
 
 ## Cordinates Limits definition (Zoom):
-Wzlon=-64.0
-Ezlon=-50.0
-Szlat=-19.0
-Nzlat=-06.0
+set Wzlon = -64.0
+set Ezlon = -50.0
+set Szlat = -19.0
+set Nzlat = -06.0
 # Mato Grosso Zoom Box: Wzlon = -64.0; Ezlon = -50.0; Szlat = -19.0; Nzlat = -06.0
 
 # Legend definition (First values of Longitude and Latitude, Others will be calculated):
-#symblon=-47.0
-symblon=`echo $Elon | awk '{print $1 - 14}'`
-symblat=$Slat 
-textlon=`echo $symblon | awk '{print $1 + 1}'`
-textlat=$symblat
+#set symblon = -47.0
+set symblon = `echo $Elon | awk '{print $1 - 13}'`
+set symblat = $Slat 
+set textlon = `echo $symblon | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 ## Plot Base map (psbasemap) and fill land and water (pscoast):
 psbasemap -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Ba2WSen -P -K > figure.ps
@@ -76,109 +75,98 @@ pscoast -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -A1000/1 -Di -G255/255/170 -S116/1
 
 
 ## Plot Topography (Etopo1 2min):
-if [ "$Etopo1" == y ]; then
+if ( "$Etopo1" == y    ) then
 echo "Plotting Topography (Etopo1)"
 makecpt ~/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -Ctopo -T-1500/5000/10 > ~/maps/a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$Etopo1GlobalColors" == y ]; then
-grdimage ~/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K -O >> figure.ps
+if ( "$Etopo1GlobalColors" == y    ) then
+grdimage ~/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K -O >> figure.ps
 else
-grdimage ~/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
+grdimage ~/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+endif
 pscoast -Q -O -K >> figure.ps
-   if [ "$Etopo1Scale" == y ]; then
+   if ( "$Etopo1Scale" == y    ) then
       psscale -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -D5.80i/3.10i/2.00i/0.25i -B500 -O -K >> figure.ps # Verificar como fazer alteracoes nos limites max e min da legenda e alterar as unidades para cm (retirar i)
-   fi
+   endif
 
 
 ## Plot Bouguer Anomaly:
-elif [ "$BouguerAnomaly" == y ]; then
+else if ( "$BouguerAnomaly" == y    ) then
 echo "Plotting Bouguer Anomaly"
 makecpt ~/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -Crainbow -T-100/200/10 > ~/maps/a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$BouguerGlobalColors" == y ]; then
-grdimage ~/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Bouguer_Global.cpt -K -O >> figure.ps
+if ( "$BouguerGlobalColors" == y    ) then
+grdimage ~/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Bouguer_Global.cpt -K -O >> figure.ps
 else
-grdimage ~/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
+grdimage ~/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+endif
 pscoast -Q -O -K >> figure.ps
-   if [ "$BouguerScale" == y ]; then
+   if ( "$BouguerScale" == y    ) then
       psscale -C./a-grids/PALET_WGM_Bouguer_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
+   endif
 
 
 ## Plot Free Air Anomaly:
-elif [ "$FreeairAnomaly" == y ]; then
+else if ( "$FreeairAnomaly" == y    ) then
 echo "Plotting Free Air Anomaly"
 makecpt ~/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -Crainbow -T-80/100/10 > ~/maps/a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$FreeairGlobalColors" == y ]; then
-grdimage ~/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_Global.cpt -K -O >> figure.ps
+if ( "$FreeairGlobalColors" == y    ) then
+grdimage ~/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Freeair_Global.cpt -K -O >> figure.ps
 else
-grdimage ~/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
+grdimage ~/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+endif
 pscoast -Q -O -K >> figure.ps
-   if [ "$FreeairScale" == y ]; then
+   if ( "$FreeairScale" == y    ) then
       psscale -C./a-grids/PALET_WGM_Freeair_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
+   endif
 
 
 ## Plot Isostatic Anomaly:
-elif [ "$IsostaticAnomaly" == y ]; then
+else if ( "$IsostaticAnomaly" == y    ) then
 echo "Plotting Isostatic Anomaly"
 makecpt ~/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -Crainbow -T-120/100/10 > ~/maps/a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$IsostaticGlobalColors" == y ]; then
-grdimage ~/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_Global.cpt -K -O >> figure.ps
+if ( "$IsostaticGlobalColors" == y    ) then
+grdimage ~/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Isostatic_Global.cpt -K -O >> figure.ps
 else
-grdimage ~/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
+grdimage ~/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+endif
 pscoast -Q -O -K >> figure.ps
-   if [ "$IsostaticScale" == y ]; then
+   if ( "$IsostaticScale" == y    ) then
       psscale -C./a-grids/PALET_WGM_Isostatic_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
+   endif
 
 
 ## Plot EMAG2 V2:
-elif [ "$EMAG2Anomaly" == y ]; then
+else if ( "$EMAG2Anomaly" == y    ) then
 echo "Plotting EMAG2 Anomaly"
 makecpt ~/maps/a-grids/EMAG2_SouthAmerica_V2.grd -Crainbow -T-150/150/10 > ~/maps/a-grids/PALET_EMAG2_SouthAmerica.cpt # Melhorar intervalo da escala
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage ~/maps/a-grids/EMAG2_SouthAmerica_V2.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -K -O >> figure.ps
+grdimage ~/maps/a-grids/EMAG2_SouthAmerica_V2.grd -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
-   if [ "$EMAG2Scale" == y ]; then
+   if ( "$EMAG2Scale" == y    ) then
       psscale -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
-
-## Plot TomoP167:
-elif [ "$TomoP167" == y ]; then
-echo "Plotting Tomo P 167 km"
-makecpt -I -T-.55/.55/0.01 > ~/maps/167tmp.cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage ~/maps/a-grids/167cut.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/167tmp.cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
-   if [ "$TomoP167Scale" == y ]; then
-      psscale -C/home/marcelo/maps/a-grids/167tmp.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
-fi
+   endif
+endif
 
 ## Plot Country Limits:
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -A1000/1 -Di -O -K -N1 >> figure.ps
 
 ## Plot South American Plate:
-if [ "$SouthAmericaPlate" == y ]; then
+if ( "$SouthAmericaPlate" == y    ) then
   psxy ~/maps/a-base/SouthAmerica-plate-countour.txt     -R -JM -m -W3,black -A1000/2     -O -K  >> figure.ps
-fi 
+endif 
 
 ## Plot South America and Brazil Contour:
-if [ "$SAmBrazilContour" == y ]; then
+if ( "$SAmBrazilContour" == y    ) then
   psxy ~/maps/a-base/SouthAmerica-Brazil-countour.txt     -R -JM -m -W3,black -A1000/2     -O -K  >> figure.ps
-fi 
+endif 
 
 ## Plot Brazilian States:
-if [ "$EstadosBR" == y ]; then
+if ( "$EstadosBR" == y    ) then
   psxy ~/maps/a-base/brasil_ibge     -R -JM -m -W3,grey -A1000/2     -O -K  >> figure.ps
-fi 
+endif 
 
 
 #psxy ~/maps/planejamento-sta-application/gmt.maps_sam/amazonas_bas.xy 	-R -JM -m -W3 -V -O -K >> figure.ps
@@ -194,7 +182,7 @@ fi
 #psxy ~/maps/planejamento-sta-application/gmt.maps_sam/secoast		-R -JM -m -W3 -V -O -K >> figure.ps
 
 ## Bacias Intracratonicas - Principais #####
-if [ "$BaciasIntracratonicasPrincipaisBR" == y ]; then
+if ( "$BaciasIntracratonicasPrincipaisBR" == y    ) then
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-sao-francisco.txt		-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-acre.txt			-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-alto-dos-tapajos.txt	-R -JM -m -W2 -V -O -K >> figure.ps
@@ -206,13 +194,13 @@ psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-pantanal.txt		-R -
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-parana.txt		-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-parecis.txt		-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-parnaiba.txt		-R -JM -m -W2 -V -O -K >> figure.ps
-psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-rio-peixe.txt		-R -JM -m -W2 -V -O -K >> figure.ps
+psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-rio-do-peixe.txt		-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-sao-francisco.txt		-R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/principais/bacia-solimoes.txt		-R -JM -m -W2 -V -O -K >> figure.ps
-fi
+endif
 
 ## Bacias Intracratonicas - Secundarias #####
-if [ "$BaciasIntracratonicasSecundariasBR" == y ]; then
+if ( "$BaciasIntracratonicasSecundariasBR" == y    ) then
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-afogados-de-ingazeira.txt -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-betania.txt    		 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-cedro.txt		 -R -JM -m -W2 -V -O -K >> figure.ps
@@ -229,19 +217,19 @@ psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-sao-jose-de-belmo
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-sao-paulo.txt		 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-socorro-santo-inacio.txt	 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/intracratonicas/secundarias/bacia-taubate.txt		 -R -JM -m -W2 -V -O -K >> figure.ps
-fi
+endif
 
 ## Bacias Margem Equatorial #####
-if [ "$BaciasMargemEquatorialBR" == y ]; then
+if ( "$BaciasMargemEquatorialBR" == y    ) then
 psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-barreirinhas.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-ceara.txt				 -R -JM -m -W2 -V -O -K >> figure.ps
-psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-foz-amazonas.txt		         -R -JM -m -W2 -V -O -K >> figure.ps
+psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-foz-do-amazonas.txt		 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-para-maranhao.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-equatorial/bacia-potiguar.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
-fi
+endif
 
 ## Bacias Margem Leste #####
-if [ "$BaciasMargemLesteBR" == y ]; then
+if ( "$BaciasMargemLesteBR" == y    ) then
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-camamu-almada.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-campos.txt				 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-cumuruxatiba.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
@@ -253,17 +241,17 @@ psxy ~/maps/a-base/bacias-br/margem-leste/bacia-pelotas.txt				 -R -JM -m -W2 -V
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-pernambuco-paraiba.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-santos.txt				 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/margem-leste/bacia-sergipe-alagoas.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
-fi
+endif
 
 ## Rifts Abortados #####
-if [ "$RiftsAbortadosBR" == y ]; then
+if ( "$RiftsAbortadosBR" == y    ) then
 psxy ~/maps/a-base/bacias-br/rifts-abortados/rift-abortado-jatoba.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/rifts-abortados/rift-abortado-reconcavo.txt		 -R -JM -m -W2 -V -O -K >> figure.ps
 psxy ~/maps/a-base/bacias-br/rifts-abortados/rift-abortado-tucano.txt			 -R -JM -m -W2 -V -O -K >> figure.ps
-fi
+endif
 
 ## Cratons #####
-if [ "$CratonsBR" == y ]; then
+if ( "$CratonsBR" == y    ) then
 psxy ~/maps/a-base/cratons-br/craton-sao-francisco.txt					 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/cratons-br/escudo-guapore-geo.txt					 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/cratons-br/escudo-guianas-geo.txt					 -R -JM -m -W3,a -V -O -K >> figure.ps
@@ -271,25 +259,25 @@ psxy ~/maps/a-base/cratons-br/escudo-riograndense-geo.txt				 -R -JM -m -W3,a -V
 psxy ~/maps/a-base/cratons-br/nucleo-cratonico-bc-parana-bloco-paranapanema-zalan.txt	 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/cratons-br/nucleo-cratonico-bc-parana.txt				 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/cratons-br/nucleo-cratonico-bc-parnaiba.txt				 -R -JM -m -W3,a -V -O -K >> figure.ps
-fi
+endif
 
 ## Lineamentos #####
-if [ "$LineamentosBR" == y ]; then
+if ( "$LineamentosBR" == y    ) then
 psxy ~/maps/a-base/lineamentos-br/falhas-bc-parana-zalan.txt				 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/lineamentos-br/lineamento-transbrasiliano.txt			 -R -JM -m -W3,a -V -O -K >> figure.ps
-fi
+endif
 
 # Plot Events from a event catalog - Need include plotting symbol size based on magnitude value
-if [ "$Events" == y ]; then
+if ( "$Events" == y    ) then
 cat ~/maps/a-events/evlist.txt | awk '{print $10,$9}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
-fi
+endif
 
 # Plot Circle or Elipse - For circle elipseXsize == elipseYsize 
-if [ "$elipse" == y ]; then
-elipsecenterlon=-56.729600 ; elipsecenterlat=-11.612300 # PDRB
-elipsedirection=0          ; elipseXsize=8              ; elipseYsize=8 # Sizes in degrees 
+if ( "$elipse" == y    ) then
+set elipsecenterlon = -56.729600; set elipsecenterlat = -11.612300 # PDRB
+set elipsedirection = 0; set elipseXsize = 8; set elipseYsize = 8 # Sizes in degrees 
 echo $elipsecenterlon $elipsecenterlat $elipsedirection $elipseXsize $elipseYsize | psxy -R -JM -O -K -Se -W0.25p >> figure.ps
-fi
+endif
 
 
 
@@ -311,466 +299,466 @@ $Wlon $Nlat
 END
 
 ## Zoom Box
-if [ "$zoombox" == y ]; then
+if ( "$zoombox" == y ) then
 psxy <<END -L -A -W1 -JM -R -O -K >> figure.ps
 $Wzlon $Szlat
 $Ezlon $Szlat
 $Ezlon $Nzlat
 $Wzlon $Nzlat
 END
-fi
+endif
 
 #################################################
 #         STATIONS WITH AVAILABLE DATA 
 #################################################
 
 ## Global Net Stations
-if [ "$globnet" == y ]; then
-color=$colorglobnet
-stasymb=$stasymbglobnet
-symbsize=$symbsizeglobnet
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$globnet" == y    ) then
+set color = $colorglobnet
+set stasymb = $stasymbglobnet
+set symbsize = $symbsizeglobnet
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N G " ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 grep "N GT" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 grep "N IU" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML Rede Mundial
 END
-fi
+endif
 
-fi 
+endif 
 
 ## UFBA Net Stations
-if [ "$ufba" == y ]; then
-color=$colorufba    
-stasymb=$stasymbufba    
-symbsize=$symbsizeufba    
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$ufba" == y    ) then
+set color = $colorufba    
+set stasymb = $stasymbufba    
+set symbsize = $symbsizeufba    
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N UFBA " ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML UFBA GEOTERM
 END
-fi
+endif
 
-fi 
+endif 
 
 ## IGP Peru Net Stations
-if [ "$peru" == y ]; then
-color=$colorperu   
-stasymb=$stasymbperu   
-symbsize=$symbsizeperu   
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$peru" == y    ) then
+set color = $colorperu   
+set stasymb = $stasymbperu   
+set symbsize = $symbsizeperu   
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N PERU " ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML IGP Peru
 END
-fi
+endif
 
-fi 
+endif 
 
 ## IGP Peru Net Stations
-if [ "$perun" == y ]; then
-color=$colorperun   
-stasymb=$stasymbperun   
-symbsize=$symbsizeperun   
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$perun" == y    ) then
+set color = $colorperun   
+set stasymb = $stasymbperun   
+set symbsize = $symbsizeperun   
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N PERUN " ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML IGP Peru
 END
-fi
+endif
 
-fi 
+endif 
 
 ## Planned Stations (USP)
-if [ "$planusp" == y ]; then
-color=$colorplanusp
-stasymb=$stasymbplanusp
-symbsize=$symbsizeplanusp
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$planusp" == y    ) then
+set color = $colorplanusp
+set stasymb = $stasymbplanusp
+set symbsize = $symbsizeplanusp
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N PLAN-USP" ~/maps/a-sta/StaList.all |  grep planejada | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML BL-USP Planned
 END
-fi
+endif
 
-fi
+endif
 
 ## USP Stations - BL
-if [ "$bluspold" == y ]; then
-color=$colorbluspold
-stasymb=$stasymbbluspold
-symbsize=$symbsizebluspold
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$bluspold" == y    ) then
+set color = $colorbluspold
+set stasymb = $stasymbbluspold
+set symbsize = $symbsizebluspold
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BL-USP" ~/maps/a-sta/StaList.all | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML USP Desativadas
 END
-fi
+endif
 
-fi
+endif
 
 ## USP Stations - BL
-if [ "$blusp" == y ]; then
-color=$colorblusp 
-stasymb=$stasymbblusp 
-symbsize=$symbsizeblusp 
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$blusp" == y    ) then
+set color = $colorblusp 
+set stasymb = $stasymbblusp 
+set symbsize = $symbsizeblusp 
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BL-RSB" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (USP)
 END
-fi
+endif
 
-fi
+endif
 
 ## UFRN Stations - NB
-if [ "$nbufrn" == y ]; then
-color=$colornbufrn
-stasymb=$stasymbnbufrn
-symbsize=$symbsizenbufrn
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$nbufrn" == y    ) then
+set color = $colornbufrn
+set stasymb = $stasymbnbufrn
+set symbsize = $symbsizenbufrn
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N NB-RSB" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (UFRN)
 END
-fi
+endif
 
-fi
+endif
 
 ## ON Stations - ON
-if [ "$onon" == y ]; then
-color=$coloronon
-stasymb=$stasymbonon
-symbsize=$symbsizeonon
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$onon" == y    ) then
+set color = $coloronon
+set stasymb = $stasymbonon
+set symbsize = $symbsizeonon
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N ON-RSB" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (ON)
 END
-fi
+endif
 
-fi
+endif
 
 ## Projeto Milenio - NB
-if [ "$nbmilen" == y ]; then
-color=$colornbmilen
-stasymb=$stasymbnbmilen
-symbsize=$symbsizenbmilen
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$nbmilen" == y    ) then
+set color = $colornbmilen
+set stasymb = $stasymbnbmilen
+set symbsize = $symbsizenbmilen
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N NB-milenio" ~/maps/a-sta/StaList.all | grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML Proj Milenio
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - Lablitos
-if [ "$brlablitos" == y ]; then
-color=$colorbrlablitos
-stasymb=$stasymbbrlablitos
-symbsize=$symbsizebrlablitos
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$brlablitos" == y    ) then
+set color = $colorbrlablitos
+set stasymb = $stasymbbrlablitos
+set symbsize = $symbsizebrlablitos
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-lablitos" ~/maps/a-sta/StaList.all |  grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML Lablitos/UnB
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - TBR
-if [ "$brtbr" == y ]; then
-color=$colorbrtbr
-stasymb=$stasymbbrtbr
-symbsize=$symbsizebrtbr
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$brtbr" == y    ) then
+set color = $colorbrtbr
+set stasymb = $stasymbbrtbr
+set symbsize = $symbsizebrtbr
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-TBR" ~/maps/a-sta/StaList.all |  grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML TBR (Lablitos/UnB)
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - GEORGE
-if [ "$osgeorge" == y ]; then
-color=$colorosgeorge
-stasymb=$stasymbosgeorge
-symbsize=$symbsizeosgeorge
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$osgeorge" == y    ) then
+set color = $colorosgeorge
+set stasymb = $stasymbosgeorge
+set symbsize = $symbsizeosgeorge
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N OS-GEORGE" ~/maps/a-sta/StaList.all |  grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML TBR (SIS/UnB)
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - OS - INCT
-if [ "$osinct" == y ]; then
-color=$colorosinct
-stasymb=$stasymbosinct
-symbsize=$symbsizeosinct
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$osinct" == y    ) then
+set color = $colorosinct
+set stasymb = $stasymbosinct
+set symbsize = $symbsizeosinct
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N OS-INCT" ~/maps/a-sta/StaList.all |  grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML OS INCT (SIS/UnB)
 END
-fi
+endif
 
-fi
+endif
 
 ## SIS-UnB Stations - BR 
-if [ "$sisunb" == y ]; then
-color=$colorsisunb
-stasymb=$stasymbsisunb
-symbsize=$symbsizesisunb
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$sisunb" == y    ) then
+set color = $colorsisunb
+set stasymb = $stasymbsisunb
+set symbsize = $symbsizesisunb
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-SIS" ~/maps/a-sta/StaList.all |  awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML SIS/UnB
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - Planejadas
-if [ "$brplan" == y ]; then
-color=$colorbrplan
-stasymb=$stasymbbrplan
-symbsize=$symbsizebrplan
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$brplan" == y    ) then
+set color = $colorbrplan
+set stasymb = $stasymbbrplan
+set symbsize = $symbsizebrplan
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-PLAN" ~/maps/a-sta/StaList.all |  awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (UnB) Planejadas
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - Somente Infra-estrutura Instalada
-if [ "$brsoinf" == y ]; then
-color=$colorbrsoinf
-stasymb=$stasymbbrsoinf
-symbsize=$symbsizebrsoinf
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$brsoinf" == y    ) then
+set color = $colorbrsoinf
+set stasymb = $stasymbbrsoinf
+set symbsize = $symbsizebrsoinf
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-RSB" ~/maps/a-sta/StaList.all |  grep "so-infra" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (UnB) Apenas Infra
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - Off Line
-if [ "$broff" == y ]; then
-color=$colorbroff
-stasymb=$stasymbbroff
-symbsize=$symbsizebroff
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$broff" == y    ) then
+set color = $colorbroff
+set stasymb = $stasymbbroff
+set symbsize = $symbsizebroff
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-RSB" ~/maps/a-sta/StaList.all | grep "off-line" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (UnB) Off-line
 END
-fi
+endif
 
-fi
+endif
 
 ## UnB Stations - BR - Satelite
-if [ "$brsat" == y ]; then
-color=$colorbrsat
-stasymb=$stasymbbrsat
-symbsize=$symbsizebrsat
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$brsat" == y    ) then
+set color = $colorbrsat
+set stasymb = $stasymbbrsat
+set symbsize = $symbsizebrsat
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N BR-RSB" ~/maps/a-sta/StaList.all | grep "satelite" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (UnB) Satelite
 END
-fi
+endif
 
-fi
+endif
 
 ## Projeto - Planejadas
-if [ "$projplan" == y ]; then
-color=$colorprojplan
-stasymb=$stasymbprojplan
-symbsize=$symbsizeprojplan
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$projplan" == y    ) then
+set color = $colorprojplan
+set stasymb = $stasymbprojplan
+set symbsize = $symbsizeprojplan
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 grep "N PROJ-PLAN" ~/maps/a-sta/StaList.all |  grep "planejada" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML PROJETO UNIVERSAL
 END
-fi
+endif
 
-fi
+endif
 
 ## Estações GNSS
-if [ "$gnss" == y ]; then
-color=$colorgnss
-stasymb=$stasymbgnss
-symbsize=$symbsizegnss
-symblat=`echo $symblat | awk '{print $1 + 1}'`
-textlat=$symblat
+if ( "$gnss" == y    ) then
+set color = $colorgnss
+set stasymb = $stasymbgnss
+set symbsize = $symbsizegnss
+set symblat = `echo $symblat | awk '{print $1 + 1}'`
+set textlat = $symblat
 
 cat ~/maps/a-gps/ESTACOES_GNSS.txt | awk '{printf "%f %f 0.3 %s\n", $3, $2,$1}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
-if [ "$Legend" == y ]; then
+if ( "$Legend" == y    ) then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML GPS GNSS
 END
-fi
+endif
 
-fi
+endif
 
 #######
 #TEXT:
 #######
-if [ "$text" == y ]; then
+if ( "$text" == y    ) then
 echo before pstext
 pstext <<END -JM -R -N -O -K >> figure.ps
 #-52.500000 -24.000000 16 000.0 06 6 Paran@!\302a
@@ -874,7 +862,7 @@ pstext <<END -JM -R -N -O -K >> figure.ps
 ## -51.6651274  -27.6388859 09 000.0 00 6 m11
 ### -52.5186000  -26.7614000 09 000.0 00 6 qq1
 END
-fi
+endif
 
 #pstext -O -V -K -R -JM -Y-2.0 -K  << END >> figure.ps
 #-54.0  -36.0 13 0  01 6 Longitude [graus]
@@ -893,7 +881,7 @@ fi
 ######
 #INLET
 ######
-if [ "$inlet" == y ]; then
+if ( "$inlet" == y    ) then
 gmtset FRAME_PEN  2; gmtset DOTS_PR_INCH 300
 
 #pscoast -O -W2 -Di -A1000/1 -R-90/-29/-57./16 -JM3. -G255 -S235 -Bwsen -X0.10 -Y15.65 -K -N1 >> figure.ps 
@@ -908,7 +896,7 @@ END
 
 pstext <<END -JM -R -O -K -Y-12.0 >> figure.ps
 END
-fi
+endif
 
 # To safety figure close (without flag -K )
 pstext <<END -JM -R -O >> figure.ps

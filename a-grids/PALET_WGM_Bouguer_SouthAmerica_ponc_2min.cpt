@@ -1,4 +1,4 @@
-#	cpt file created by: makecpt /home/sismologo/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -Crainbow -T-100/200/10
+#	cpt file created by: makecpt /home/marcelo/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -Crainbow -T-100/200/10
 #COLOR_MODEL = +HSV
 #
 -100	295	1	1	-90	295	1	1

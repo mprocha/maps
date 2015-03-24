@@ -1,4 +1,4 @@
-#	cpt file created by: makecpt /home/sismologo/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -Crainbow -T-120/100/10
+#	cpt file created by: makecpt /home/marcelo/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -Crainbow -T-120/100/10
 #COLOR_MODEL = +HSV
 #
 -120	293.181818182	1	1	-110	293.181818182	1	1
