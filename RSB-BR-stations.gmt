@@ -7,10 +7,10 @@ gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION
 gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20       #GPS RBMC 
 projplan=n   ; colorprojplan=purple   ; stasymbprojplan=t   ; symbsizeprojplan=0.45   #Est. Planejadas (Projetos)
 sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
-brsat=n      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
-broff=n      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
+brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
+broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
 brsoinf=n    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.40    #RSB-BR So-infra
-brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
+brplan=y     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
 brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
 osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
 osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
@@ -29,12 +29,12 @@ globnet=n    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.
 BaciasIntracratonicasPrincipaisBR=n  ; Legend=y    
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=n    
+BaciasMargemLesteBR=n                ; Events=y    
 RiftsAbortadosBR=n                   ; elipse=n    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
-KimberlitosBR=y
+KimberlitosBR=n
 
 Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
 BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
@@ -42,6 +42,7 @@ FreeairAnomaly=n   ; FreeairGlobalColors=y   ; FreeairScale=n   #Need FreeAirAno
 IsostaticAnomaly=n ; IsostaticGlobalColors=y ; IsostaticScale=n #Need IsostaticAnomaly = y
 EMAG2Anomaly=n     ; EMAG2Scale=n            #Need EMAG2Anomaly =y
 TomoP167=n         ; TomoP167Scale=n         #Need TomoP167 =y
+Magnitudes=y       ; MagnitudesScale=y       #Need Magnitudes =y
 
 \rm figure.ps 
 gmtdir=~/maps
@@ -57,10 +58,10 @@ filename=RSB-BR-stations
 #Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-9.0
 
 ## Brazil limits: 
-#Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
+Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
 
 ## South America limits: 
-Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
+#Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
 
 
 
@@ -167,6 +168,17 @@ grdimage ~/maps/a-grids/167cut.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/ho
 pscoast -Q -O -K >> figure.ps
    if [ "$TomoP167Scale" == y ]; then
       psscale -C/home/marcelo/maps/a-grids/167tmp.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
+   fi
+
+## Plot Magnitudes Grid:
+elif [ "$Magnitudes" == y ]; then
+echo "Plotting Magnitudes Grid"
+makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
+pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+grdimage ~/maps/a-grids/magnitudes.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
+pscoast -Q -O -K >> figure.ps
+   if [ "$MagnitudesScale" == y ]; then
+      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.5i/2.00i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Values":  -O -E -K >> figure.ps
    fi
 fi
 
@@ -289,7 +301,30 @@ fi
 
 # Plot Events from a event catalog - Need include plotting symbol size based on magnitude value
 if [ "$Events" == y ]; then
-cat ~/maps/a-events/evlist.txt | awk '{print $10,$9}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
+#cat ~/maps/a-events/evlist.txt | awk '{print $9,$8}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
+#cat ~/maps/a-events/evlist.txt | awk '{print $10,$9}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
+cat ~/maps/a-events/evlist.txt | awk '{print $10,$9,$12*0.07}' | psxy -JM -R -Sc -L -W1 -O -Gviolet -K >> figure.ps
+cat > neis.legend << END
+H 10 1 Magnitudes Sizes
+D 0 1p
+N 3
+V 0 1p
+D 0 1p
+N 5
+V 0 1p
+S 0.1i c 0.06i - 0.25p 0.3i M 1
+S 0.1i c 0.06i - 0.25p 0.3i M 2
+S 0.1i c 0.06i - 0.25p 0.3i M 3
+S 0.1i c 0.08i - 0.25p 0.3i M 4
+S 0.1i c 0.10i - 0.25p 0.3i M 5
+V 0 1p
+D 0 1p
+N 1
+END
+
+#pslegend -Dx4.6i/6.8i/3.5i/1.7i/TC -O -F+p+glightyellow neis.legend -K -R -JM  >> figure.ps
+
+#cat ~/maps/a-events/evlist.txt |  psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
 fi
 
 ## Plot Brazilian Kimberlites Bodies:
