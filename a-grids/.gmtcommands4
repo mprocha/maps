@@ -1,5 +1,5 @@
 # GMT common arguments shelf
 -JM19
--R-90/-30/-30/10
+-R-75/-30/-35/10
 -jM19
 EOF

@@ -2,15 +2,38 @@
 
 #minmax 150km.dat
 
-awk '{print $4,$3,$5}' magnitudes.out > magnitudes.xyz
+#file=magnitudes
+#region=-90/-30/-30/10
+#scale=2.4/5.0/0.05
 
-xyz2grd ~/maps/a-grids/magnitudes.xyz -G/home/marcelo/maps/a-grids/magnitudes.grd -R-90/-30/-30/10 -I1 -V
+#file=magnitudesBR
+#region=-75/-30/-30/10
+#scale=1.4/4.4/0.05
 
-#grdcut ~/maps/a-grids/167.grd -G/home/marcelo/maps/a-grids/167cut.grd -R-57/-36/-25/-8.66667
+#file=magnitudes-ver
+#region=-75/-30/-30/10
+#scale=1.3/4.4/0.05
 
-makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
-#grd2cpt /home/marcelo/maps/a-grids/magnitudes.grd > ~/maps/a-grids/magnitudes.cpt
+#file=magnitudes3
+#region=-75/-30/-35/10
+#scale=0.9/4.3/0.05
+
+#file=magnitudes4
+#region=-75/-30/-35/10
+#scale=1.3/4.4/0.05
+
+file=magnitudes6
+region=-75/-30/-35/10
+scale=1.8/4.5/0.05
+
+awk '{print $4,$3,$5}' $file.out > $file.xyz
+
+xyz2grd ~/maps/a-grids/$file.xyz -G/home/marcelo/maps/a-grids/$file.grd -R$region -I1 -V
+
+
+makecpt -I -T$scale > ~/maps/a-grids/$file.cpt
+#grd2cpt /home/marcelo/maps/a-grids/$file.grd > ~/maps/a-grids/$file.cpt
  
-grdimage ~/maps/a-grids/magnitudes.grd -JM19 -E300 -C/home/marcelo/maps/a-grids/magnitudes.cpt > quick.ps
-#grdcontour ~/maps/a-grids/magnitudes.grd -JM19 -C/home/marcelo/maps/a-grids/magnitudes.cpt > quick.ps
-gv quick.ps&
+grdimage ~/maps/a-grids/$file.grd -JM19 -E300 -C/home/marcelo/maps/a-grids/$file.cpt > $file-quick.ps
+#grdcontour ~/maps/a-grids/$file.grd -JM19 -C/home/marcelo/maps/a-grids/$file.cpt > $file-quick.ps
+gv $file-quick.ps&
