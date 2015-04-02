@@ -8,16 +8,16 @@ set gnss       = n ; set colorgnss       = blue   ; set stasymbgnss       = d ; 
 set projplan   = n ; set colorprojplan   = purple ; set stasymbprojplan   = t ; set symbsizeprojplan   = 0.45 #Est. Planejadas (Projetos)
 set sisunb     = n ; set colorsisunb     = gray   ; set stasymbsisunb     = t ; set symbsizesisunb     = 0.30 #Est. Obsis
 set brsat      = y ; set colorbrsat      = green  ; set stasymbbrsat      = t ; set symbsizebrsat      = 0.40 #RSB-BR Satelite
-set broff      = n ; set colorbroff      = orange ; set stasymbbroff      = t ; set symbsizebroff      = 0.40 #RSB-BR Off-line
+set broff      = y ; set colorbroff      = orange ; set stasymbbroff      = t ; set symbsizebroff      = 0.40 #RSB-BR Off-line
 set brsoinf    = n ; set colorbrsoinf    = brown  ; set stasymbbrsoinf    = t ; set symbsizebrsoinf    = 0.40 #RSB-BR So-infra
 set brplan     = n ; set colorbrplan     = white  ; set stasymbbrplan     = t ; set symbsizebrplan     = 0.40 #RSB-BR Planejadas 
 set brtbr      = n ; set colorbrtbr      = brown  ; set stasymbbrtbr      = t ; set symbsizebrtbr      = 0.30 #Proj. Transbrasiliano 
 set osgeorge   = n ; set colorosgeorge   = pink   ; set stasymbosgeorge   = t ; set symbsizeosgeorge   = 0.30 #Proj. Transbrasiliano George
 set osinct     = n ; set colorosinct     = pink   ; set stasymbosinct     = t ; set symbsizeosinct     = 0.30 #Proj. INCT OS
 set brlablitos = n ; set colorbrlablitos = yellow ; set stasymbbrlablitos = t ; set symbsizebrlablitos = 0.30 #Lablitos 
-set blusp      = n ; set colorblusp      = blue   ; set stasymbblusp      = t ; set symbsizeblusp      = 0.40 #RSB-BL USP 
-set nbufrn     = n ; set colornbufrn     = red    ; set stasymbnbufrn     = t ; set symbsizenbufrn     = 0.40 #RSB-NB UFRN 
-set onon       = n ; set coloronon       = yellow ; set stasymbonon       = t ; set symbsizeonon       = 0.40 #RSB-ON 
+set blusp      = y ; set colorblusp      = blue   ; set stasymbblusp      = t ; set symbsizeblusp      = 0.40 #RSB-BL USP 
+set nbufrn     = y ; set colornbufrn     = red    ; set stasymbnbufrn     = t ; set symbsizenbufrn     = 0.40 #RSB-NB UFRN 
+set onon       = y ; set coloronon       = yellow ; set stasymbonon       = t ; set symbsizeonon       = 0.40 #RSB-ON 
 set bluspold   = n ; set colorbluspold   = black  ; set stasymbbluspold   = t ; set symbsizebluspold   = 0.30 #BL-IAG-USP 
 set nbmilen    = n ; set colornbmilen    = black  ; set stasymbnbmilen    = t ; set symbsizenbmilen    = 0.30 #Projeto Milenio
 set planusp    = n ; set colorplanusp    = white  ; set stasymbplanusp    = t ; set symbsizeplanusp    = 0.30 #Est. Planejadas (USP)

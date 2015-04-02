@@ -10,33 +10,33 @@ sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.3
 brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.40      #RSB-BR Satelite
 broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.40      #RSB-BR Off-line
 brsoinf=n    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.40    #RSB-BR So-infra
-brplan=y     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
+brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.40     #RSB-BR Planejadas 
 brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
 osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
 osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
 brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
-blusp=n      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.40      #RSB-BL USP 
-nbufrn=n     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.40     #RSB-NB UFRN 
-onon=n       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.40       #RSB-ON 
+blusp=y      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.40      #RSB-BL USP 
+nbufrn=y     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.40     #RSB-NB UFRN 
+onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.40       #RSB-ON 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
 perun=n      ; colorperun=black       ; stasymbperun=t      ; symbsizeperun=0.30      #Est. IGP Peru Norte
 peru=n       ; colorperu=blue         ; stasymbperu=t       ; symbsizeperu=0.30       #Est. IGP Peru    
 ufba=n       ; colorufba=blue         ; stasymbufba=t       ; symbsizeufba=0.30       #Est. UFBA Vilar  
-globnet=n    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.30    #Est. Rede Mundial
+globnet=y    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.30    #Est. Rede Mundial
 
 BaciasIntracratonicasPrincipaisBR=n  ; Legend=y    
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=y    
+BaciasMargemLesteBR=n                ; Events=n    
 RiftsAbortadosBR=n                   ; elipse=n    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
 
-Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
+Etopo1=y           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
 BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
 FreeairAnomaly=n   ; FreeairGlobalColors=y   ; FreeairScale=n   #Need FreeAirAnomaly = y
 IsostaticAnomaly=n ; IsostaticGlobalColors=y ; IsostaticScale=n #Need IsostaticAnomaly = y
@@ -173,12 +173,13 @@ pscoast -Q -O -K >> figure.ps
 ## Plot Magnitudes Grid:
 elif [ "$Magnitudes" == y ]; then
 echo "Plotting Magnitudes Grid"
-makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
+#makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
+makecpt -I -T1.5/4.5/0.5 > ~/maps/a-grids/magnitudes.cpt
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage ~/maps/a-grids/magnitudes.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
+grdimage ~/maps/a-grids/magnitudes6.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
    if [ "$MagnitudesScale" == y ]; then
-      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.5i/2.00i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Values":  -O -E -K >> figure.ps
+      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.5i/3.00i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Values":  -O -E -K >> figure.ps
    fi
 fi
 
@@ -303,7 +304,8 @@ fi
 if [ "$Events" == y ]; then
 #cat ~/maps/a-events/evlist.txt | awk '{print $9,$8}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
 #cat ~/maps/a-events/evlist.txt | awk '{print $10,$9}' | psxy -JM -R -Sc0.20 -L -W2 -O -Gred -K >> figure.ps
-cat ~/maps/a-events/evlist.txt | awk '{print $10,$9,$12*0.07}' | psxy -JM -R -Sc -L -W1 -O -Gviolet -K >> figure.ps
+#cat ~/maps/a-events/evlist.txt | awk '{print $10,$9,$12*0.07}' | psxy -JM -R -Sc -L -W1 -O -Gviolet -K >> figure.ps
+cat ~/maps/a-events/evlist.txt | awk '{print $1,$2}' | psxy -JM -R -Sc0.20 -L -W1 -O -Gviolet -K >> figure.ps
 cat > neis.legend << END
 H 10 1 Magnitudes Sizes
 D 0 1p
