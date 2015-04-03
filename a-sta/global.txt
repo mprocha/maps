@@ -1,0 +1,6 @@
+N GT 		CPUP    -26.330000  -57.330000 0105.0 ----/--/-- ----/--/-- Villa-Florida-Paraguay                      ativa
+N G  		SPB     -23.590000  -47.430000 0647.0 ----/--/-- ----/--/-- Sao-Paulo-Brazil                            ativa
+N IU 		PTGA 	-00.730000  -59.970000 0237.0 ----/--/-- ----/--/-- Pitinga-Brazil 				ativa
+N IU     	BDFB 	-15.641777  -48.014800 1198.0 ----/--/-- ----/--/-- Brasilia-DF_coord-BRA7			ativa
+N IU 		RCBR 	-05.830000  -35.900000 0400.0 ----/--/-- ----/--/-- Riachuelo-Brazil 				ativa
+N IU 		SAML 	-08.950000  -63.180000 0120.0 ----/--/-- ----/--/-- Samuel-Brazil 				ativa

@@ -1,0 +1,15 @@
+N OS-SIS 	ATM1 	-03.288500  -52.224900 0183.0 ----/--/-- ----/--/-- UHE-Belo-Monte,PA 				verificar
+N OS-SIS 	BMO1 	-03.154600  -51.755800 0037.0 ----/--/-- ----/--/-- UHE-Belo-Monte,PA 				verificar
+N OS-SIS 	BMO2 	-03.347400  -51.988700 0117.0 ----/--/-- ----/--/-- UHE-Belo-Monte,PA 				verificar
+N OS-SIS 	BRA7 	-15.641777  -48.014800 1198.0 ----/--/-- ----/--/-- Brasilia-DF 				ativa
+N OS-SIS 	CAN1  	-13.417500  -48.085200 0380.0 ----/--/-- ----/--/-- UHE-Cana-Brava,GO 				verificar
+N OS-SIS 	FOR1 	-03.778500  -38.768100 0470.0 ----/--/-- ----/--/-- Forteleza,CE 				verificar
+N OS-SIS 	FUN1  	-21.112100  -44.931800 0922.0 ----/--/-- ----/--/-- UHE-Funil,MG 				verificar
+N OS-SIS 	LAJE 	-09.981600  -48.318500 0294.0 ----/--/-- ----/--/-- UHE-Lajeado,TO 				verificar
+N OS-SIS 	JAN7 	-15.060000  -44.310000 0693.0 ----/--/-- ----/--/-- Januaria-MG 				verificar
+N OS-SIS 	PAL2 	-06.747800  -47.327300 0248.0 ----/--/-- ----/--/-- UHE-Estreito,MA/TO 				verificar
+N OS-SIS 	SIM1 	-22.009000  -42.985400 0392.0 ----/--/-- ----/--/-- UHE-Simplicio-RJ 				verificar
+N OS-SIS 	SIM2 	-21.915900  -42.806900 0345.0 ----/--/-- ----/--/-- UHE-Simplicio-RJ 				verificar
+N OS-SIS 	SAMU 	-08.915300  -63.250700 0125.0 ----/--/-- ----/--/-- Samuel,RO 					verificar
+N OS-SIS 	TUC3 	-04.282900  -49.916600 0152.0 ----/--/-- ----/--/-- UHE-Tucurui,PA 				verificar
+N OS-SIS 	TUC4 	-04.251400  -49.536800 0114.0 ----/--/-- ----/--/-- UHE-Tucurui,PA 				verificar

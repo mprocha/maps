@@ -671,7 +671,7 @@ fi
 
 fi
 
-## SIS-UnB Stations - BR 
+## SIS-UnB Stations - OS 
 if [ "$sisunb" == y ]; then
 color=$colorsisunb
 stasymb=$stasymbsisunb
@@ -679,7 +679,7 @@ symbsize=$symbsizesisunb
 symblat=`echo $symblat | awk '{print $1 + 1}'`
 textlat=$symblat
 
-grep "N BR-SIS" ~/maps/a-sta/StaList.all |  awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
+grep "N OS-SIS" ~/maps/a-sta/StaList.all |  awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 
 if [ "$Legend" == y ]; then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
