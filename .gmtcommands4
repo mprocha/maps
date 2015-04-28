@@ -1,13 +1,9 @@
 # GMT common arguments shelf
--B500
+-Ba0.2f0.1:Group Velocity (km/s):
 -JM17.0
 -JX3.5i/-1.7i
 -R-74.0/-30.0/-36.0/07.0
 -xr-2.85i
--yr-5.1i
--jM17.0
-EOF
-OF
 -yr-5.1i
 -jM17.0
 EOF
