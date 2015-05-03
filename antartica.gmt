@@ -10,8 +10,8 @@ Wlon=-180.0; Elon=180.0; Slat=-89.9; Nlat=-45.0
 
 J=-JG0/-90/40/6.5i
 
-psfile=antartica.ps
-jpgfile=antartica.jpg
+psfile=~/maps/figures/antartica.ps
+jpgfile=~/maps/figures/antartica.jpg
 
 
 echo "Plotting Topography (Etopo1)"
