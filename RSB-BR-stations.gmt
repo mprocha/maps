@@ -30,13 +30,13 @@ BaciasIntracratonicasPrincipaisBR=n  ; Legend=y
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
 BaciasMargemLesteBR=n                ; Events=n    
-RiftsAbortadosBR=n                   ; elipse=n    
+RiftsAbortadosBR=n                   ; elipse=y    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
 
-Etopo1=y           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
+Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
 BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
 FreeairAnomaly=n   ; FreeairGlobalColors=y   ; FreeairScale=n   #Need FreeAirAnomaly = y
 IsostaticAnomaly=n ; IsostaticGlobalColors=y ; IsostaticScale=n #Need IsostaticAnomaly = y
@@ -58,7 +58,7 @@ filename=RSB-BR-stations
 #Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-9.0
 
 ## Brazil limits: 
-Wlon=-74.0; Elon=-30.0; Slat=-36.0; Nlat=07.0
+Wlon=-74.0; Elon=-30.0; Slat=-35.0; Nlat=07.0
 
 ## South America limits: 
 #Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
@@ -179,7 +179,7 @@ pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
 grdimage ~/maps/a-grids/magnitudes6.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
    if [ "$MagnitudesScale" == y ]; then
-      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.5i/3.00i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Values":  -O -E -K >> figure.ps
+      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Intervals":  -O -E -K >> figure.ps
    fi
 fi
 
