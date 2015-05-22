@@ -1,0 +1,62 @@
+#!/bin/bash
+
+gmtset MEASURE_UNIT cm  ; gmtset ANOT_FONT_SIZE 11   ; gmtset LABEL_FONT_SIZE 11   ; gmtset TICK_LENGTH 0.1
+gmtset FRAME_PEN  3     ; gmtset BASEMAP_TYPE PLAIN  ; gmtset WANT_EURO_FONT TRUE  ; gmtset PLOT_DEGREE_FORMAT -D
+gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION 0
+
+
+## Region limits: 
+Wlon=-180.0; Elon=180.0; Slat=-89.9; Nlat=-45.0
+
+J=-JG0/-90/40/6.5i
+
+psfile=~/maps/figures/antartica.ps
+jpgfile=~/maps/figures/antartica.jpg
+
+
+echo "Plotting Topography (Etopo1)"
+#makecpt /home/marcelo/GRIDS-ORIGINAIS/WGM2012_ETOPO1_ponc_2min.grd -Ctopo -T-1500/5000/10 > ~/maps/a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt
+
+#pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Bg15 -Dc -A1000 -Glightgray -Wthinnest -P -K > $psfile
+
+grdimage /home/marcelo/GRIDS-ORIGINAIS/WGM2012_ETOPO1_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 $J -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K > $psfile
+
+pscoast -R$Wlon/$Elon/$Slat/$Nlat $J -Ba15wsEN -Dc -A10000/2 -Wthinnest -P -K -O >> $psfile
+pscoast -R$Wlon/$Elon/$Slat/$Nlat $J -Bg15wsEN -Dc -A10000/2 -Wthinnest -P -K -O >> $psfile
+
+#grdimage /home/marcelo/GRIDS-ORIGINAIS/WGM2012_ETOPO1_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K -O >> $psfile
+
+grep Antarctica ~/maps/a-sta/StaList.all | awk '{print $5,$4}' | psxy -R$Wlon/$Elon/$Slat/$Nlat -JG -St0.20 -W1  -Gyellow -K -O >> $psfile
+echo -90 -80 | psxy -JG -R -Ss0.20 -W2 -O -Gred  -K >> $psfile
+
+psxy <<END -Am -L $J -R$Wlon/$Elon/$Slat/$Nlat -W6/red -O  >> $psfile
+-135 -75
+-45  -75
+-45  -85
+-135 -85
+-135 -75
+END
+
+#psxy <<END -L -A -W1 -JM -R -O -K >> figure.ps
+#$Wzlon $Szlat
+#$Ezlon $Szlat
+#$Ezlon $Nzlat
+#$Wzlon $Nzlat
+#END
+
+
+#grep Antarctica ~/maps/a-sta/StaList.all | awk '{print $5,$4}' | psxy -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -St0.15 -W2 -O -Ggreen -K -O >> $psfile
+#echo -90 -80 | psxy -JM17.0 -R -Ss0.15 -W2 -O -Gred  >> $psfile
+
+
+pscoast -Q -O -K >> figure.ps
+
+
+
+
+
+
+convert -quality 1000 -density 400 $psfile $jpgfile
+gv $psfile
+
+
