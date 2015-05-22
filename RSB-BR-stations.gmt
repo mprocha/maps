@@ -30,28 +30,29 @@ BaciasIntracratonicasPrincipaisBR=n  ; Legend=y
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
 BaciasMargemLesteBR=n                ; Events=n    
-RiftsAbortadosBR=n                   ; elipse=y    
+RiftsAbortadosBR=n                   ; elipse=n    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
-BaciasIntracratonicasPrincipaisBR=n  ; Legend=y    
-BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
-BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=n    
-RiftsAbortadosBR=n                   ; elipse=y    
-CratonsBR=y                          ; zoombox=n    
-LineamentosBR=y                      ; text=y    
-SouthAmericaPlate=y                  ; inlet=n    
+BaciasIntracratonicasPrincipaisBR=n  
+BaciasIntracratonicasSecundariasBR=n 
+BaciasMargemEquatorialBR=n           
+BaciasMargemLesteBR=n                
+RiftsAbortadosBR=n                   
+CratonsBR=n                          
+LineamentosBR=n                      
+SouthAmericaPlate=y                  
 KimberlitosBR=n
 
-Etopo1=n           ; Etopo1GlobalColors=n    ; Etopo1Scale=y    #Need Etopo1 = y
-BouguerAnomaly=n   ; BouguerGlobalColors=y   ; BouguerScale=n   #Need BouguerAnomaly = y
-FreeairAnomaly=n   ; FreeairGlobalColors=y   ; FreeairScale=n   #Need FreeAirAnomaly = y
-IsostaticAnomaly=n ; IsostaticGlobalColors=y ; IsostaticScale=n #Need IsostaticAnomaly = y
-EMAG2Anomaly=n     ; EMAG2Scale=n            #Need EMAG2Anomaly =y
-TomoP167=n         ; TomoP167Scale=n         #Need TomoP167 =y
-Magnitudes=y       ; MagnitudesScale=y       #Need Magnitudes =y
-ANTtomo15=n        ; ANTtomo15Scale=y        #Need ANTtomo15 =y
+# Grids:
+Etopo1=n		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
+BouguerAnomaly=n	; BouguerGlobalColors=y		; BouguerScale=n	#Need BouguerAnomaly = y
+FreeairAnomaly=n	; FreeairGlobalColors=y		; FreeairScale=n	#Need FreeAirAnomaly = y
+IsostaticAnomaly=n	; IsostaticGlobalColors=y	; IsostaticScale=n	#Need IsostaticAnomaly = y
+EMAG2Anomaly=n		; EMAG2Scale=n						#Need EMAG2Anomaly =y
+TomoP167=n		; TomoP167Scale=n					#Need TomoP167 =y
+Magnitudes=n		; staused=3			; MagnitudesScale=y	#Need Magnitudes =y
+ANTtomo=y		; period=15			; ANTtomoScale=y	#Need ANTtomo =y
 
 
 \rm figure.ps 
@@ -68,7 +69,7 @@ filename=RSB-BR-stations
 #Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-9.0
 
 ## Brazil limits: 
-Wlon=-74.0; Elon=-30.0; Slat=-35.0; Nlat=07.0
+Wlon=-74.0; Elon=-30.0; Slat=-35.0; Nlat=06.0
 
 ## South America limits: 
 #Wlon=-85.0; Elon=-30.0; Slat=-60.0; Nlat=15.0
@@ -186,22 +187,21 @@ echo "Plotting Magnitudes Grid"
 #makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
 makecpt -I -T1.5/4.5/0.5 > ~/maps/a-grids/magnitudes.cpt
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage ~/maps/a-grids/magnitudes6.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
+grdimage ~/maps/a-grids/magnitudes"$staused".grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
    if [ "$MagnitudesScale" == y ]; then
-      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Magnitudes Intervals":  -O -E -K >> figure.ps
+      psscale -C/home/marcelo/maps/a-grids/magnitudes.cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.5f0.5:"Magnitudes Intervals":  -O -E -K >> figure.ps
    fi
 
-## Plot ANTtomo15 Grid:
-elif [ "$ANTtomo15" == y ]; then
-echo "Plotting ANTtomo15 Grid"
-#makecpt -I -T2.4/5.0/0.05 > ~/maps/a-grids/magnitudes.cpt
-makecpt -I -T2.2/3.8/0.01 > ~/maps/a-grids/ANTtomo15.cpt
+## Plot ANTtomo Grid:
+elif [ "$ANTtomo" == y ]; then
+echo "Plotting ANTtomo Grid"
+makecpt -I -T2.2/3.8/0.01 > ~/maps/a-grids/ANTtomo"$period".cpt
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage ~/maps/a-grids/surftomo_R_15_tudo.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/ANTtomo15.cpt -K -O >> figure.ps
+grdimage ~/maps/a-grids/surftomo_R_"$period"_tudo.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C/home/marcelo/maps/a-grids/ANTtomo"$period".cpt -K -O >> figure.ps
 pscoast -Q -O -K >> figure.ps
-   if [ "$ANTtomo15Scale" == y ]; then
-      psscale -C/home/marcelo/maps/a-grids/ANTtomo15.cpt -D5.5i/3.00i/2.00i/0.3i -Ba0.2f0.1:"Group Velocity (km/s)":  -O -E -K >> figure.ps
+   if [ "$ANTtomoScale" == y ]; then
+      psscale -C/home/marcelo/maps/a-grids/ANTtomo"$period".cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Group Velocity (km/s)  Per= $period":  -O -E -K >> figure.ps
    fi
 fi
 
@@ -414,7 +414,7 @@ psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
-$textlon $textlat 11 0  01 ML Rede Mundial
+$textlon $textlat 11 0  01 ML Global Networks
 END
 fi
 
@@ -792,7 +792,8 @@ psxy <<END -JM -R -S$stasymb$symbsize -L -W5 -O -G$color -K >> figure.ps
 $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
-$textlon $textlat 11 0  01 ML RSBR (UnB) Satelite
+#$textlon $textlat 11 0  01 ML RSBR (UnB) Satelite
+$textlon $textlat 11 0  01 ML RSBR (UnB) 
 END
 fi
 
