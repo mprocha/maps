@@ -26,6 +26,11 @@ file=magnitudes6
 region=-75/-30/-35/10
 scale=1.3/4.4/0.05
 
+#file=SnT_Global
+file=SnT_RSBR_Global
+region=-75/-32/-37/7
+scale=1.3/4.4/0.05
+
 awk '{print $4,$3,$5}' $file.out > $file.xyz
 
 xyz2grd ~/maps/a-grids/$file.xyz -G/home/marcelo/maps/a-grids/$file.grd -R$region -I1 -V

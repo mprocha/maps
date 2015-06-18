@@ -1,6 +1,7 @@
 # GMT common arguments shelf
 -Ba0.2f0.1:Magnitudes Values:
 -JM19
--R-75/-30/-35/10
+-R-75/-32/-37/7
 -jM19
 EOF
+
