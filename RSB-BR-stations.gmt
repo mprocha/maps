@@ -8,16 +8,16 @@ gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20 
 projplan=n   ; colorprojplan=purple   ; stasymbprojplan=t   ; symbsizeprojplan=0.30   #Est. Planejadas (Projetos)
 sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
 brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.30      #RSB-BR Satelite
-broff=y      ; colorbroff=green       ; stasymbbroff=t      ; symbsizebroff=0.30      #RSB-BR Off-line
-brsoinf=y    ; colorbrsoinf=green     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.30    #RSB-BR So-infra
+broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.30      #RSB-BR Off-line
+brsoinf=y    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.30    #RSB-BR So-infra
 brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.30     #RSB-BR Planejadas 
 brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
 osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
 osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
 brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
-blusp=y      ; colorblusp=green       ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
-nbufrn=y     ; colornbufrn=green      ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
-onon=y       ; coloronon=green        ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
+blusp=y      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
+nbufrn=y     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
+onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
@@ -29,7 +29,7 @@ globnet=y    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.
 BaciasIntracratonicasPrincipaisBR=n  ; Legend=y    
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=n    
+BaciasMargemLesteBR=n                ; Events=y    
 RiftsAbortadosBR=n                   ; elipse=n    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
@@ -412,6 +412,7 @@ textlat=$symblat
 
 grep "N G " ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 grep "N GT" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
+grep "N II" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 grep "N IU" ~/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
 if [ "$Legend" == y ]; then
