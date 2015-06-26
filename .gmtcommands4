@@ -1,5 +1,5 @@
 # GMT common arguments shelf
--Ba2WSen
+-Ba0.5f0.5:Magnitudes Intervals:
 -JE
 -JG0/-90/40/6.5i
 -JM17.0
@@ -8,10 +8,6 @@
 -JX3.5i/-1.7i
 -R-74.0/-30.0/-40.0/06.0
 -xr-2.85i
--yr-5.1i
--jM17.0
-EOF
-5i
 -yr-5.1i
 -jM17.0
 EOF
