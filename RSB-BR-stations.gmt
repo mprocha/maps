@@ -31,11 +31,13 @@ BaciasIntracratonicasPrincipaisBR=n  ; Legend=y
 BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
 BaciasMargemEquatorialBR=n           ; EstadosBR=y    
 BaciasMargemLesteBR=n                ; Events=n    
-RiftsAbortadosBR=n                   ; elipse=n    
+RiftsAbortadosBR=n                    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
+
+elipse=y   ; elipXaxis=8; elipYaxis=8 #In degrees 
 
 # Grids:
 Etopo1=n		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
@@ -47,8 +49,8 @@ TomoP167=n		; TomoP167Scale=n					#Need TomoP167 =y
 Magnitudes=y		; staused=4			; MagnitudesScale=y	#Need Magnitudes =y
 			  #magfile=SnT_Global
 			  #magfile=SnT_RSBR_Global
-			  #magfile=grid-mR-st4
-			  magfile=grid-mR-st3
+			  magfile=grid-mR-st4
+			  #magfile=grid-mR-st3
 ANTtomo=n		; period=15			; ANTtomoScale=y	#Need ANTtomo =y
 
 
@@ -361,7 +363,7 @@ fi
 if [ "$elipse" == y ]; then
 #elipsecenterlon=-56.729600 ; elipsecenterlat=-11.612300 # PDRB
 elipsecenterlon=-55.357860 ; elipsecenterlat=-07.045370 # NPGB
-elipsedirection=0          ; elipseXsize=7              ; elipseYsize=8 # Sizes in degrees 
+elipsedirection=0          ; elipseXsize=$elipXaxis              ; elipseYsize=$elipYaxis # Sizes in degrees 
 echo $elipsecenterlon $elipsecenterlat $elipsedirection $elipseXsize $elipseYsize | psxy -R -JM -O -K -Se -W0.25p >> figure.ps
 fi
 
