@@ -6,19 +6,19 @@ gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION
 # ($1) Choose 'y' or 'n' to plot a particular network; ($2) for color of the sta symbols; ($3) for sta symbol; (4) for sta symbol size:
 gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20       #GPS RBMC 
 projplan=n   ; colorprojplan=purple   ; stasymbprojplan=t   ; symbsizeprojplan=0.30   #Est. Planejadas (Projetos)
-sisunb=n     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
-rsbrall=y    ; colorrsbrall=white     ; stasymbrsbrall=t    ; symbsizersbrall=0.35    #RSB-BR Satelite
-brsat=n      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.30      #RSB-BR Satelite
-broff=n      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.30      #RSB-BR Off-line
-brsoinf=n    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.30    #RSB-BR So-infra
-brplan=n     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.30     #RSB-BR Planejadas 
+sisunb=y     ; colorsisunb=gray       ; stasymbsisunb=t     ; symbsizesisunb=0.30     #Est. Obsis
+rsbrall=n    ; colorrsbrall=white     ; stasymbrsbrall=t    ; symbsizersbrall=0.35    #RSB-BR Satelite
+brsat=y      ; colorbrsat=green       ; stasymbbrsat=t      ; symbsizebrsat=0.30      #RSB-BR Satelite
+broff=y      ; colorbroff=orange      ; stasymbbroff=t      ; symbsizebroff=0.30      #RSB-BR Off-line
+brsoinf=y    ; colorbrsoinf=brown     ; stasymbbrsoinf=t    ; symbsizebrsoinf=0.30    #RSB-BR So-infra
+brplan=y     ; colorbrplan=white      ; stasymbbrplan=t     ; symbsizebrplan=0.30     #RSB-BR Planejadas 
 brtbr=n      ; colorbrtbr=brown       ; stasymbbrtbr=t      ; symbsizebrtbr=0.30      #Proj. Transbrasiliano 
-osgeorge=n   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
+osgeorge=y   ; colorosgeorge=pink     ; stasymbosgeorge=t   ; symbsizeosgeorge=0.30   #Proj. Transbrasiliano George
 osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.30     #Proj. INCT OS
 brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
-blusp=n      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
-nbufrn=n     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
-onon=n       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
+blusp=y      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
+nbufrn=y     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
+onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
@@ -37,16 +37,16 @@ LineamentosBR=n                      ; text=y
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
 
-elipse=y   ; elipXaxis=8; elipYaxis=8 #In degrees 
+elipse=n   ; elipXaxis=8; elipYaxis=8 #In degrees 
 
 # Grids:
-Etopo1=n		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
+Etopo1=y		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
 BouguerAnomaly=n	; BouguerGlobalColors=y		; BouguerScale=n	#Need BouguerAnomaly = y
 FreeairAnomaly=n	; FreeairGlobalColors=y		; FreeairScale=n	#Need FreeAirAnomaly = y
 IsostaticAnomaly=n	; IsostaticGlobalColors=y	; IsostaticScale=n	#Need IsostaticAnomaly = y
 EMAG2Anomaly=n		; EMAG2Scale=n						#Need EMAG2Anomaly =y
 TomoP167=n		; TomoP167Scale=n					#Need TomoP167 =y
-Magnitudes=y		; staused=4			; MagnitudesScale=y	#Need Magnitudes =y
+Magnitudes=n		; staused=4			; MagnitudesScale=y	#Need Magnitudes =y
 			  #magfile=SnT_Global
 			  #magfile=SnT_RSBR_Global
 			  magfile=grid-mR-st4
