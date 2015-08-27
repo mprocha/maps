@@ -1,5 +1,5 @@
 # GMT common arguments shelf
--Ba2WSen
+-B500
 -JE
 -JG0/-90/40/6.5i
 -JM17.0
@@ -11,6 +11,7 @@
 -yr-5.1i
 -jM17.0
 EOF
+OF
 5i
 -yr-5.1i
 -jM17.0
