@@ -19,6 +19,7 @@ brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos
 blusp=n      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
 nbufrn=n     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
 onon=n       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
+onsubsal=y   ; coloronsubsal=yellow   ; stasymbonsubsal=t   ; symbsizeonsubsal=0.30   #ON-SUBSAL 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
@@ -587,6 +588,27 @@ $symblon $symblat
 END
 pstext -JM -R -O -V -K  << END >> figure.ps
 $textlon $textlat 11 0  01 ML RSBR (ON)
+END
+fi
+
+fi
+
+## ON Stations - ON-SUBSAL
+if [ "$onsubsal" == y ]; then
+color=$coloronsubsal
+stasymb=$stasymbonsubsal
+symbsize=$symbsizeonsubsal
+symblat=`echo $symblat | awk '{print $1 + 1}'`
+textlat=$symblat
+
+grep "N ON-SUBSAL" ~/maps/a-sta/StaList.all | grep "desativ" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
+
+if [ "$Legend" == y ]; then
+psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
+$symblon $symblat
+END
+pstext -JM -R -O -V -K  << END >> figure.ps
+$textlon $textlat 11 0  01 ML ON-SUBSAL
 END
 fi
 
