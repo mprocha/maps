@@ -1,4 +1,4 @@
-#	cpt file created by: makecpt /home/sismologo/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -Ctopo -T-1500/5000/10
+#	cpt file created by: makecpt /home/marcelo/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -Ctopo -T-1500/5000/10
 #COLOR_MODEL = HSV
 #
 -1500	289.461538462	0.45	0.85	-1490	289.461538462	0.45	0.85
