@@ -18,24 +18,25 @@ osinct=n     ; colorosinct=pink       ; stasymbosinct=t     ; symbsizeosinct=0.3
 brlablitos=n ; colorbrlablitos=yellow ; stasymbbrlablitos=t ; symbsizebrlablitos=0.30 #Lablitos 
 blusp=n      ; colorblusp=blue        ; stasymbblusp=t      ; symbsizeblusp=0.30      #RSB-BL USP 
 nbufrn=n     ; colornbufrn=red        ; stasymbnbufrn=t     ; symbsizenbufrn=0.30     #RSB-NB UFRN 
-onon=n       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
+onon=y       ; coloronon=yellow       ; stasymbonon=t       ; symbsizeonon=0.30       #RSB-ON 
 bluspold=n   ; colorbluspold=black    ; stasymbbluspold=t   ; symbsizebluspold=0.30   #BL-IAG-USP 
 nbmilen=n    ; colornbmilen=black     ; stasymbnbmilen=t    ; symbsizenbmilen=0.30    #Projeto Milenio
 planusp=n    ; colorplanusp=white     ; stasymbplanusp=t    ; symbsizeplanusp=0.30    #Est. Planejadas (USP)
 perun=n      ; colorperun=black       ; stasymbperun=t      ; symbsizeperun=0.30      #Est. IGP Peru Norte
 peru=n       ; colorperu=blue         ; stasymbperu=t       ; symbsizeperu=0.30       #Est. IGP Peru    
 ufba=n       ; colorufba=blue         ; stasymbufba=t       ; symbsizeufba=0.30       #Est. UFBA Vilar  
-globnet=n    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.30    #Est. Rede Mundial
+globnet=y    ; colorglobnet=black     ; stasymbglobnet=s    ; symbsizeglobnet=0.30    #Est. Rede Mundial
 
-BaciasIntracratonicasPrincipaisBR=n  ; Legend=y    
-BaciasIntracratonicasSecundariasBR=n ; SAmBrazilContour=n     
-BaciasMargemEquatorialBR=n           ; EstadosBR=y    
-BaciasMargemLesteBR=n                ; Events=n    
+BaciasIntracratonicasPrincipaisBR=y  ; Legend=y    
+BaciasIntracratonicasSecundariasBR=y ; SAmBrazilContour=n     
+BaciasMargemEquatorialBR=y           ; EstadosBR=y    
+BaciasMargemLesteBR=y                ; Events=n    
 RiftsAbortadosBR=n                    
 CratonsBR=n                          ; zoombox=n    
 LineamentosBR=n                      ; text=y    
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
+oldTectonic=y
 
 elipse=n   ; elipXaxis=8; elipYaxis=8 #In degrees 
 
@@ -68,13 +69,13 @@ filename=RSB-BR-stations
 #Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-9.0
 
 ## Brazil limits: 
-Wlon=-74.0; Elon=-30.0; Slat=-40.0; Nlat=06.0
+#Wlon=-74.0; Elon=-30.0; Slat=-40.0; Nlat=06.0
 
 ##Juraci Limits
 #Wlon=-75.0; Elon=-32.0; Slat=-37.0; Nlat=07.0
 
 ## South America limits: 
-#Wlon=-85.0; Elon=-30.0; Slat=-57.0; Nlat=15.0
+Wlon=-85.0; Elon=-30.0; Slat=-57.0; Nlat=15.0
 
 
 
@@ -323,6 +324,12 @@ fi
 if [ "$LineamentosBR" == y ]; then
 psxy ~/maps/a-base/lineamentos-br/falhas-bc-parana-zalan.txt				 -R -JM -m -W3,a -V -O -K >> figure.ps
 psxy ~/maps/a-base/lineamentos-br/lineamento-transbrasiliano.txt			 -R -JM -m -W3,a -V -O -K >> figure.ps
+fi
+
+## Old Tectonic Strucutures #####
+if [ "$oldTectonic" == y ]; then
+psxy ~/maps/a-base/old-tectonic-base/cratonsfran.dat     				 -R -JM -m -W4 -V -O -K >> figure.ps
+psxy ~/maps/a-base/old-tectonic-base/geologia.dat               			 -R -JM -m -W4 -V -O -K >> figure.ps
 fi
 
 # Plot Events from a event catalog - Need include plotting symbol size based on magnitude value
