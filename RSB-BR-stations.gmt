@@ -43,7 +43,7 @@ elipse=n   ; elipXaxis=8; elipYaxis=8 #In degrees
 
 # Grids:
 Etopo1=n		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
-BouguerAnomaly=n	; BouguerGlobalColors=y		; BouguerScale=n	; BouguerAnomalyContour=n	#Need BouguerAnomaly = y
+BouguerAnomaly=n	; BouguerGlobalColors=n		; BouguerScale=n	; BouguerAnomalyContour=y	#Need BouguerAnomaly = y
 FreeairAnomaly=n	; FreeairGlobalColors=y		; FreeairScale=n	#Need FreeAirAnomaly = y
 IsostaticAnomaly=n	; IsostaticGlobalColors=y	; IsostaticScale=n	#Need IsostaticAnomaly = y
 EMAG2Anomaly=n		; EMAG2Scale=n						#Need EMAG2Anomaly =y
@@ -68,7 +68,8 @@ filename=RSB-BR-stations
 #Nlat=07.0
 
 ## Tomography Limits:
-Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-8.0
+#Wlon=-57.0; Elon=-36.0; Slat=-25.0; Nlat=-8.0
+Wlon=-54.0; Elon=-36.0; Slat=-24.0; Nlat=-8.5
 
 ## Brazil limits: 
 #Wlon=-74.0; Elon=-30.0; Slat=-40.0; Nlat=06.0
@@ -100,17 +101,43 @@ psbasemap -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Ba2WSen -P -K > figure.ps
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -A1000/1 -Di -G255/255/170 -S116/195/250 -O -K -N1 >> figure.ps
 
 
+## Plot TomoP167:
+if [ "$TomoP167" == y ]; then
+   echo "Plotting Tomo P 167 km"
+   makecpt -I -T-.55/.56/0.01 > $HOME/maps/a-grids/167tmp.cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+#   grdimage $HOME/maps/a-grids/167cut.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/167tmp.cpt -K -O >> figure.ps
+   grdmath $HOME/maps/a-grids/167.grd 0 NAN = $HOME/maps/a-grids/tmp2.grd
+   grdimage $HOME/maps/a-grids/tmp2.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/167tmp.cpt -K -O >> figure.ps
+   pscoast -Q -O -K >> figure.ps
+   if [ "$TomoP167Scale" == y ]; then
+      psscale -C$HOME/maps/a-grids/167tmp.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
+   fi
+fi
+
+## Plot ANTtomo Grid:
+if [ "$ANTtomo" == y ]; then
+   echo "Plotting ANTtomo Grid"
+   makecpt -I -T2.2/3.8/0.01 > $HOME/maps/a-grids/ANTtomo"$period".cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   grdimage $HOME/maps/a-grids/surftomo_R_"$period"_tudo.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/ANTtomo"$period".cpt -K -O >> figure.ps
+   pscoast -Q -O -K >> figure.ps
+   if [ "$ANTtomoScale" == y ]; then
+      psscale -C$HOME/maps/a-grids/ANTtomo"$period".cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Group Velocity (km/s)  Per= $period":  -O -E -K >> figure.ps
+   fi
+fi
+
 ## Plot Topography (Etopo1 2min):
 if [ "$Etopo1" == y ]; then
-echo "Plotting Topography (Etopo1)"
-makecpt $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -Ctopo -T-1500/5000/10 > $HOME/maps/a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$Etopo1GlobalColors" == y ]; then
-grdimage $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K -O >> figure.ps
-else
-grdimage $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting Topography (Etopo1)"
+   makecpt $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -Ctopo -T-1500/5000/10 > $HOME/maps/a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   if [ "$Etopo1GlobalColors" == y ]; then
+      grdimage $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_Global.cpt -K -O >> figure.ps
+   else
+      grdimage $HOME/maps/a-grids/WGM2012_ETOPO1_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+   fi
+   pscoast -Q -O -K >> figure.ps
    if [ "$Etopo1Scale" == y ]; then
       psscale -C./a-grids/PALET_WGM_ETOPO1_SouthAmerica_ponc_2min.cpt -D5.80i/3.10i/2.00i/0.25i -B500 -O -K >> figure.ps # Verificar como fazer alteracoes nos limites max e min da legenda e alterar as unidades para cm (retirar i)
    fi
@@ -118,36 +145,39 @@ fi
 
 ## Plot Bouguer Anomaly:
 if [ "$BouguerAnomaly" == y ]; then
-echo "Plotting Bouguer Anomaly"
-makecpt $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -Crainbow -T-100/200/10 > $HOME/maps/a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$BouguerAnomalyContour" == y ]; then
-   makecpt -I -T-160/110/20.0 > $HOME/maps/a-grids/testegrd.cpt
-   grdcontour $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
-else
-   if [ "$BouguerGlobalColors" == y ]; then
-      grdimage $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Bouguer_Global.cpt -K -O >> figure.ps
+   echo "Plotting Bouguer Anomaly"
+   makecpt $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -Crainbow -T-100/200/10 > $HOME/maps/a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
+   makecpt -I -T-80/160/20.0 -Crainbow > $HOME/maps/a-grids/testegrd.cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   if [ "$BouguerAnomalyContour" == y ]; then
+      makecpt -I -T-160/120/20.0 > $HOME/maps/a-grids/testegrd.cpt
+      grdcontour $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -S50 -Q20 -W2 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
    else
-      grdimage $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+      if [ "$BouguerGlobalColors" == y ]; then
+         grdimage $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/PALET_WGM_Bouguer_Global.cpt -K -O >> figure.ps
+      else
+#         grdimage $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/PALET_WGM_Bouguer_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+         grdimage $HOME/maps/a-grids/WGM2012_Bouguer_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
+      fi
    fi
-fi
 pscoast -Q -O -K >> figure.ps
    if [ "$BouguerScale" == y ]; then
-      psscale -C./a-grids/PALET_WGM_Bouguer_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
+      psscale -C$HOME/maps/a-grids/testegrd.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
+#      psscale -C$HOME/maps/a-grids/PALET_WGM_Bouguer_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
    fi
 fi
 
 ## Plot Free Air Anomaly:
 if [ "$FreeairAnomaly" == y ]; then
-echo "Plotting Free Air Anomaly"
-makecpt $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -Crainbow -T-80/100/10 > $HOME/maps/a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$FreeairGlobalColors" == y ]; then
-grdimage $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_Global.cpt -K -O >> figure.ps
-else
-grdimage $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting Free Air Anomaly"
+   makecpt $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -Crainbow -T-80/100/10 > $HOME/maps/a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   if [ "$FreeairGlobalColors" == y ]; then
+      grdimage $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_Global.cpt -K -O >> figure.ps
+   else
+      grdimage $HOME/maps/a-grids/WGM2012_Freeair_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Freeair_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+   fi
+   pscoast -Q -O -K >> figure.ps
    if [ "$FreeairScale" == y ]; then
       psscale -C./a-grids/PALET_WGM_Freeair_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
    fi
@@ -155,15 +185,15 @@ fi
 
 ## Plot Isostatic Anomaly:
 if [ "$IsostaticAnomaly" == y ]; then
-echo "Plotting Isostatic Anomaly"
-makecpt $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -Crainbow -T-120/100/1 > $HOME/maps/a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-if [ "$IsostaticGlobalColors" == y ]; then
-grdimage $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_Global.cpt -K -O >> figure.ps
-else
-grdimage $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
-fi
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting Isostatic Anomaly"
+   makecpt $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -Crainbow -T-120/100/1 > $HOME/maps/a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt # Melhorar intervalo da escala
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   if [ "$IsostaticGlobalColors" == y ]; then
+      grdimage $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_Global.cpt -K -O >> figure.ps
+   else
+      grdimage $HOME/maps/a-grids/WGM2012_Isostatic_SouthAmerica_ponc_2min.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_WGM_Isostatic_SouthAmerica_ponc_2min.cpt -K -O >> figure.ps
+   fi
+   pscoast -Q -O -K >> figure.ps
    if [ "$IsostaticScale" == y ]; then
       psscale -C./a-grids/PALET_WGM_Isostatic_Global.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
    fi
@@ -171,62 +201,39 @@ fi
 
 ## Plot EMAG2 V2:
 if [ "$EMAG2Anomaly" == y ]; then
-echo "Plotting EMAG2 Anomaly"
-makecpt $HOME/maps/a-grids/EMAG2_SouthAmerica_V2.grd -Crainbow -T-150/150/10 > $HOME/maps/a-grids/PALET_EMAG2_SouthAmerica.cpt # Melhorar intervalo da escala
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage $HOME/maps/a-grids/EMAG2_SouthAmerica_V2.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting EMAG2 Anomaly"
+   makecpt $HOME/maps/a-grids/EMAG2_SouthAmerica_V2.grd -Crainbow -T-150/150/10 > $HOME/maps/a-grids/PALET_EMAG2_SouthAmerica.cpt # Melhorar intervalo da escala
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   grdimage $HOME/maps/a-grids/EMAG2_SouthAmerica_V2.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -K -O >> figure.ps
+   pscoast -Q -O -K >> figure.ps
    if [ "$EMAG2Scale" == y ]; then
       psscale -C./a-grids/PALET_EMAG2_SouthAmerica.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
    fi
 fi
 
-## Plot TomoP167:
-if [ "$TomoP167" == y ]; then
-echo "Plotting Tomo P 167 km"
-makecpt -I -T-.55/.56/0.01 > $HOME/maps/a-grids/167tmp.cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage $HOME/maps/a-grids/167cut.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/167tmp.cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
-   if [ "$TomoP167Scale" == y ]; then
-      psscale -C$HOME/maps/a-grids/167tmp.cpt -D5.1i/1.35i/2.88i/0.4i -O -E -K >> figure.ps
-   fi
-fi
-
 ## Plot Magnitudes Grid:
 if [ "$Magnitudes" == y ]; then
-echo "Plotting Magnitudes Grid"
-filename="$filename"-"$magfile"
-#makecpt -I -T2.4/5.0/0.05 > $HOME/maps/a-grids/magnitudes.cpt
-makecpt -I -T1.5/5.0/0.5 > $HOME/maps/a-grids/magnitudes.cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage $HOME/maps/a-grids/"$magfile".grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting Magnitudes Grid"
+   filename="$filename"-"$magfile"
+#   makecpt -I -T2.4/5.0/0.05 > $HOME/maps/a-grids/magnitudes.cpt
+   makecpt -I -T1.5/5.0/0.5 > $HOME/maps/a-grids/magnitudes.cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+   grdimage $HOME/maps/a-grids/"$magfile".grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/magnitudes.cpt -K -O >> figure.ps
+   pscoast -Q -O -K >> figure.ps
    if [ "$MagnitudesScale" == y ]; then
       psscale -C$HOME/maps/a-grids/magnitudes.cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.5f0.5:"Magnitudes Intervals":  -O -E -K >> figure.ps
    fi
 fi
 
-## Plot ANTtomo Grid:
-if [ "$ANTtomo" == y ]; then
-echo "Plotting ANTtomo Grid"
-makecpt -I -T2.2/3.8/0.01 > $HOME/maps/a-grids/ANTtomo"$period".cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-grdimage $HOME/maps/a-grids/surftomo_R_"$period"_tudo.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/ANTtomo"$period".cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
-   if [ "$ANTtomoScale" == y ]; then
-      psscale -C$HOME/maps/a-grids/ANTtomo"$period".cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Group Velocity (km/s)  Per= $period":  -O -E -K >> figure.ps
-   fi
-fi
-
 ## Plot Teste Grid:
 if [ "$Testegrd" == y ]; then
-echo "Plotting Teste Grid"
-makecpt -I -T-160/110/5.0 > $HOME/maps/a-grids/testegrd.cpt
-pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
-#grdimage $HOME/maps/a-grids/testegrd.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
-grdcontour $HOME/maps/a-grids/testegrd.grd -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
-pscoast -Q -O -K >> figure.ps
+   echo "Plotting Teste Grid"
+   makecpt -I -T-160/80/20.0 > $HOME/maps/a-grids/testegrd.cpt
+   pscoast -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Gc -O -K >> figure.ps
+#   grdimage $HOME/maps/a-grids/testegrd.grd -R$Wlon/$Elon/$Slat/$Nlat -E300 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
+#   grdcontour $HOME/maps/a-grids/testegrd.grd -R$Wlon/$Elon/$Slat/$Nlat -W3 -JM17.0 -C$HOME/maps/a-grids/testegrd.cpt -K -O >> figure.ps
+   grdcontour $HOME/maps/a-grids/testegrd.grd -R$Wlon/$Elon/$Slat/$Nlat -W3 -JM17.0 -C10 -Q40 -A20+s13 -K -O >> figure.ps
+   pscoast -Q -O -K >> figure.ps
 #   if [ "$ANTtomoScale" == y ]; then
 #      psscale -C$HOME/maps/a-grids/ANTtomo"$period".cpt -D5.7i/2.50i/2.00i/0.3i -Ba0.2f0.1:"Group Velocity (km/s)  Per= $period":  -O -E -K >> figure.ps
 #   fi
