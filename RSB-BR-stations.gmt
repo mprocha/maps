@@ -492,7 +492,7 @@ symbsize=$symbsizeperu
 symblat=`echo $symblat | awk '{print $1 + 1}'`
 textlat=$symblat
 
-grep "N PERU " $HOME/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
+grep "N PERU-IGP " $HOME/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
 if [ "$Legend" == y ]; then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
@@ -505,7 +505,7 @@ fi
 
 fi 
 
-## IGP Peru Net Stations
+## IGP Peru North Net Stations
 if [ "$perun" == y ]; then
 color=$colorperun   
 stasymb=$stasymbperun   
@@ -513,7 +513,7 @@ symbsize=$symbsizeperun
 symblat=`echo $symblat | awk '{print $1 + 1}'`
 textlat=$symblat
 
-grep "N PERUN " $HOME/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
+grep "N PERUN-IGP " $HOME/maps/a-sta/StaList.all | grep "ativa" | awk '{print $5" "$4" 0.3 "$3}' | psxy -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
 
 if [ "$Legend" == y ]; then
 psxy <<END -JM -R -S$stasymb$symbsize -L -W4 -O -G$color -K >> figure.ps
