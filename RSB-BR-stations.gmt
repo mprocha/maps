@@ -1,7 +1,7 @@
 #!/bin/bash
 gmtset MEASURE_UNIT cm  ; gmtset ANOT_FONT_SIZE 11   ; gmtset LABEL_FONT_SIZE 11   ; gmtset TICK_LENGTH 0.1 
 gmtset FRAME_PEN  3     ; gmtset BASEMAP_TYPE PLAIN  ; gmtset WANT_EURO_FONT TRUE  ; gmtset PLOT_DEGREE_FORMAT -D 
-gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION 0
+gmtset DOTS_PR_INCH 300 ; gmtset HEADER_FONT_SIZE 30 ; gmtset OBLIQUE_ANNOTATION 0 ; gmtset COLOR_NAN 0
 
 # ($1) Choose 'y' or 'n' to plot a particular network; ($2) for color of the sta symbols; ($3) for sta symbol; (4) for sta symbol size:
 gnss=n       ; colorgnss=blue         ; stasymbgnss=d       ; symbsizegnss=0.20       #GPS RBMC 
@@ -38,16 +38,17 @@ LineamentosBR=n                      ; text=y
 SouthAmericaPlate=n                  ; inlet=n    
 KimberlitosBR=n
 oldTectonic=y
+Poligono=y
 
 elipse=n   ; elipXaxis=8; elipYaxis=8 #In degrees 
 
 # Grids:
-Etopo1=n		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
+Etopo1=y		; Etopo1GlobalColors=n		; Etopo1Scale=y		#Need Etopo1 = y
 BouguerAnomaly=n	; BouguerGlobalColors=n		; BouguerScale=n	; BouguerAnomalyContour=y	#Need BouguerAnomaly = y
 FreeairAnomaly=n	; FreeairGlobalColors=y		; FreeairScale=n	#Need FreeAirAnomaly = y
 IsostaticAnomaly=n	; IsostaticGlobalColors=y	; IsostaticScale=n	#Need IsostaticAnomaly = y
 EMAG2Anomaly=n		; EMAG2Scale=n						#Need EMAG2Anomaly =y
-TomoP167=y		; TomoP167Scale=n					#Need TomoP167 =y
+TomoP167=n		; TomoP167Scale=n					#Need TomoP167 =y
 Magnitudes=n		; staused=4			; MagnitudesScale=y	#Need Magnitudes =y
 			  #magfile=SnT_Global
 			  #magfile=SnT_RSBR_Global
@@ -78,7 +79,7 @@ Wlon=-54.0; Elon=-36.0; Slat=-24.0; Nlat=-8.5
 #Wlon=-75.0; Elon=-32.0; Slat=-37.0; Nlat=07.0
 
 ## South America limits: 
-#Wlon=-85.0; Elon=-30.0; Slat=-57.0; Nlat=15.0
+Wlon=-85.0; Elon=-30.0; Slat=-57.0; Nlat=15.0
 
 
 
@@ -97,7 +98,7 @@ textlon=`echo $symblon | awk '{print $1 + 1}'`
 textlat=$symblat
 
 ## Plot Base map (psbasemap) and fill land and water (pscoast):
-psbasemap -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Ba2WSen -P -K > figure.ps
+psbasemap -R$Wlon/$Elon/$Slat/$Nlat -JM17.0 -Ba2WSeN -P -K > figure.ps
 pscoast -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -A1000/1 -Di -G255/255/170 -S116/195/250 -O -K -N1 >> figure.ps
 
 
@@ -245,6 +246,11 @@ pscoast -R$Wlon/$Elon/$Slat/$Nlat -W1 -JM17.0 -A1000/1 -Di -O -K -N1 >> figure.p
 ## Plot South American Plate:
 if [ "$SouthAmericaPlate" == y ]; then
   psxy $HOME/maps/a-base/SouthAmerica-plate-countour.txt     -R -JM -m -W3,black -A1000/2     -O -K  >> figure.ps
+fi 
+
+## Poligono:
+if [ "$Poligono" == y ]; then
+  psxy $HOME/maps/a-base/poligono     -R -JM -m -W3,black -A1000/2     -O -K  >> figure.ps
 fi 
 
 ## Plot South America and Brazil Contour:
